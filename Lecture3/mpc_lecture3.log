@@ -1,4 +1,4 @@
-This is e-pTeX, Version 3.141592653-p3.9.1-210218-2.6 (utf8.euc) (TeX Live 2022/dev/Debian) (preloaded format=platex 2023.9.25)  1 NOV 2023 22:48
+This is e-pTeX, Version 3.141592653-p3.9.1-210218-2.6 (utf8.euc) (TeX Live 2022/dev/Debian) (preloaded format=platex 2023.9.25)  3 NOV 2023 01:54
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1203,79 +1203,98 @@ Overfull \vbox (45.59155pt too high) detected at line 32
 [1
 
 ]
-LaTeX Font Info:    Trying to load font information for U+msa on input line 41.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 47.
 
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 41.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 47.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Trying to load font information for OT1+mathkerncmss on inp
-ut line 41.
+ut line 47.
 
 (/usr/share/texlive/texmf-dist/tex/latex/sansmathaccent/ot1mathkerncmss.fd
 File: ot1mathkerncmss.fd 2020/01/31 Fontinst v1.933 font definitions for OT1/ma
 thkerncmss.
 )
-LaTeX Font Info:    Font shape `JT1/gt/bx/n' in size <14.4> not available
-(Font)              Font shape `JT1/gt/m/n' tried instead on input line 41.
-LaTeX Font Info:    Font shape `JY1/gt/bx/n' in size <14.4> not available
-(Font)              Font shape `JY1/gt/m/n' tried instead on input line 41.
+LaTeX Font Info:    Trying to load font information for TS1+cmss on input line 
+47.
 
-[2
+(/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmss.fd
+File: ts1cmss.fd 2019/12/16 v2.5j Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `JT1/gt/bx/n' in size <14.4> not available
+(Font)              Font shape `JT1/gt/m/n' tried instead on input line 47.
+LaTeX Font Info:    Font shape `JY1/gt/bx/n' in size <14.4> not available
+(Font)              Font shape `JY1/gt/m/n' tried instead on input line 47.
+ [2
 
 ] [3
 
 ] [4
 
 ]
-Overfull \hbox (39.792pt too wide) detected at line 88
-[]
- []
+File: Bellman.png Graphic file (type bmp)
+<Bellman.png>
+File: Pontryagin.png Graphic file (type bmp)
+<Pontryagin.png>
+ [5
 
-
-Overfull \hbox (98.98465pt too wide) detected at line 88
-[]
- []
-
-
-Overfull \vbox (118.97849pt too high) detected at line 88
- []
-
-[5
+]
+[6
 
 ]
 File: DP.png Graphic file (type bmp)
 <DP.png>
- [6
-
-] [7
+ [7
 
 ]
-Overfull \hbox (1.41608pt too wide) detected at line 116
-[]
+Overfull \vbox (34.88817pt too high) detected at line 175
  []
 
 [8
 
-] [9
+]
+Overfull \vbox (9.39015pt too high) detected at line 190
+ []
 
-] [10
+[9
 
 ]
-LaTeX Font Info:    Trying to load font information for TS1+cmss on input line 
-154.
- (/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmss.fd
-File: ts1cmss.fd 2019/12/16 v2.5j Standard LaTeX font definitions
-)
-Overfull \vbox (46.54784pt too high) detected at line 154
+Overfull \vbox (3.24857pt too high) detected at line 208
+ []
+
+[10
+
+]
+Overfull \hbox (184.8904pt too wide) detected at line 221
+[]
  []
 
 [11
+
+] [12
+
+]
+File: Pontryagin.png Graphic file (type bmp)
+<Pontryagin.png>
+ [13
+
+] [14
+
+] [15
+
+] [16
+
+] [17
+
+] [18
+
+] [19
 
 ]
 \tf@nav=\write7
@@ -1292,12 +1311,12 @@ Package rerunfilecheck Info: File `mpc_lecture3.out' has not changed.
 (rerunfilecheck)             Checksum: 05B9FF7757FE6A446D8F294B02146D28;54.
  ) 
 Here is how much of TeX's memory you used:
- 39192 strings out of 478741
- 892697 string characters out of 5860982
- 1158622 words of memory out of 5000000
- 56976 multiletter control sequences out of 15000+600000
- 517044 words of font info for 86 fonts, out of 8000000 for 9000
+ 39282 strings out of 478741
+ 894187 string characters out of 5860982
+ 1159813 words of memory out of 5000000
+ 57055 multiletter control sequences out of 15000+600000
+ 521984 words of font info for 104 fonts, out of 8000000 for 9000
  929 hyphenation exceptions out of 8191
- 128i,13n,122p,1811b,597s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 128i,13n,122p,1811b,986s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on mpc_lecture3.dvi (11 pages, 31640 bytes).
+Output written on mpc_lecture3.dvi (19 pages, 68752 bytes).

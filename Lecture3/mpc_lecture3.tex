@@ -33,30 +33,86 @@
     
     \begin{frame}{今回の目標}
         \footnotesize
-        HJB方程式を理解する
         \begin{equation*}
             -\frac{\partial V}{\partial t}\left(x,t\right) = \min _u H\left(x, u, \left( \frac{\partial V}{\partial x} \right)^T\left(x, t\right), t \right)
         \end{equation*}
         \centering
+        \begin{itemize}
+            \item \colorbox{yellow}{前回のおさらい}
+            \item 動的計画法
+            \item HJB方程式
+            \item 最小原理
+            \item MPC導入
+        \end{itemize}
     \end{frame}
 
+    
+
     \begin{frame}{前回のおさらい}
-        微分法 \\
+        \scriptsize
+        
 
-        変分法 \\
+        \begin{columns}
+            \begin{column}{.4\textwidth}
+                \begin{tcolorbox}[title=微分法]
+                    \colorbox{yellow}{関数}の勾配を考える\\
+                    停留するとある関数の最大or最小 \\
+                    \colorbox{yellow}{点}の変動を考える\\
+                \end{tcolorbox}
+            \end{column}
+            \begin{column}{.2\textwidth}
+                \centering
+                \tikz \draw[->](0,0) -- (1,0);
+            \end{column}
+            \begin{column}{.4\textwidth}
+                \begin{tcolorbox}[title=変分法]
+                    \colorbox{yellow}{汎関数(関数の関数)}の勾配を考える\\
+                    停留するとある関数の全体を最大or最小\\ 
+                    \colorbox{yellow}{関数}の変動を考える\\
+                \end{tcolorbox}
+            \end{column}
+        \end{columns}
 
+        微分法ではある曲線を最小化(最大化)することを考えていたけど、変分法ではある評価関数に基づいて関数全体を最小化(最大化)する関数を求める \\
+        
         偏微分と似た考え方をする \\
 
         二点境界値問題の解 \\
-        オイラーラグランジュ方程式を満たす \\
+        Euler-Lagrange方程式を満たす \\
         制約を含んだ場合 \\
     \end{frame}
 
     \begin{frame}{最適性条件まとめ}
         \footnotesize
-        ラグランジュの未定乗数法\\
+        Lagrangeの未定乗数法\\
         KKT条件\\
-        オイラーラグランジュ方程式\\
+        Euler-Lagrange方程式\\
+    \end{frame}
+
+    \begin{frame}{最適化の多様な定式}
+        Q.なぜ似たようなものがいくつもあるのか？？\\
+
+        A.同時期(冷戦期)に2人の天才によって最適制御が定式化されたから\\
+
+        \begin{columns}
+
+            \begin{column}{0.5\textwidth}
+                \centering
+                \includegraphics[clip, width = 2.0cm]{Bellman.png}\\
+                {\tiny Bellman}
+            \end{column}
+        
+            \begin{column}{0.5\textwidth}
+                \centering
+                \includegraphics[clip, width = 2.0cm]{Pontryagin.png}\\
+                {\tiny Pontryagin}
+            \end{column}
+        \end{columns}
+
+        Bellmanによって動的計画法(Bellman方程式)\\
+
+        Pontryaginによって最小原理(最大原理)\\
+
     \end{frame}
 
     \begin{frame}{動的計画法1}
@@ -73,15 +129,7 @@
             V(x, t) = \min_{u[t, t_f]} \left( \psi(x(t_f)) + \int_t^{t_f} L(x(\tau), u(\tau), \tau) d\tau \right)
         \end{align*}
     
-        \begin{align*}
-            V(x, t) = \min_{u[t, t_f]} \left( \int_t^{t+dt} L(x(\tau), u(\tau), \tau) d\tau + \psi(x(t_f)) + \int_{t+dt}^{t_f} L(x(\tau), u(\tau), \tau) d\tau \right)
-        \end{align*}
 
-        \begin{align*}
-            V(x, t) &= \min_{u[t, t+dt]} \left( \int_t^{t+dt} L(x(\tau), u(\tau), \tau) d\tau + \min_{u[t+dt, t_f]} \left( \psi(x(t_f)) + \int_{t+dt}^{t_f} L(x(\tau), u(\tau), \tau) d\tau \right) \right) \\
-            &= \min_{u[t, t+dt]} \left( \int_t^{t+dt} L(x(\tau), u(\tau), \tau) d\tau + V \left( x + \int_t^{t+dt} f(x, u, \tau) d\tau, t + dt \right) \right) \\
-            &= \min_u \left( L(x, u, t) dt + V \left( x + f(x, u, t) dt, t + dt \right) \right)
-        \end{align*}
 
         次元の呪い
     
@@ -98,26 +146,114 @@
                 大塚:非線形最適制御入門
             }
         }
+
     \end{frame}
     
     \begin{frame}{動的計画法3}
-        \footnotesize
+        \tiny
+        \begin{align*}
+            V(x, t) = \min_{u[t, t_f]} \left( \psi(x(t_f)) + \int_t^{t_f} L(x(\tau), u(\tau), \tau) d\tau \right)
+        \end{align*}
+        \begin{align*}
+            V(x, t) = \min_{u[t, t_f]} \left( \int_t^{t+dt} L(x(\tau), u(\tau), \tau) d\tau + \psi(x(t_f)) + \int_{t+dt}^{t_f} L(x(\tau), u(\tau), \tau) d\tau \right)
+        \end{align*}
+
+        \begin{align*}
+            V(x, t) &= \min_{u[t, t_f]} \left( \psi(x(t_f)) + \int_t^{t_f} L(x(\tau), u(\tau), \tau) d\tau \right) \\
+            &=\min_{u[t, t_f]} \left( \int_t^{t+dt} L(x(\tau), u(\tau), \tau) d\tau + \psi(x(t_f)) + \int_{t+dt}^{t_f} L(x(\tau), u(\tau), \tau) d\tau \right) \\
+            &= \min_{u[t, t+dt]} \left( \int_t^{t+dt} L(x(\tau), u(\tau), \tau) d\tau + \min_{u[t+dt, t_f]} \left( \psi(x(t_f)) + \int_{t+dt}^{t_f} L(x(\tau), u(\tau), \tau) d\tau \right) \right) \\
+            &= \min_{u[t, t+dt]} \left( \int_t^{t+dt} L(x(\tau), u(\tau), \tau) d\tau + V \left( x + \int_t^{t+dt} f(x, u, \tau) d\tau, t + dt \right) \right) \\
+        \end{align*}
+
+        \begin{tcolorbox}[title=Bellman方程式]
+            \begin{align*}
+                V(x, t) &= \min_u \left( L(x, u, t) dt + V \left( x + f(x, u, t) dt, t + dt \right) \right)
+            \end{align*}
+        \end{tcolorbox}
+
         動的計画法が解ければ最適制御ができる!!! \\
     \end{frame}
 
     \begin{frame}{HJB方程式}
         \footnotesize
-        
+        \begin{tcolorbox}[title=Bellman方程式]
+            \begin{align*}
+                V(x, t) &= \min_u \left( L(x, u, t) dt + V \left( x + f(x, u, t) dt, t + dt \right) \right)
+            \end{align*}
+        \end{tcolorbox}
+        \begin{tcolorbox}[title=次元の呪い]
+            次元の呪いは、状態空間や行動空間の次元数が増加するにつれて、必要な計算量やメモリが指数的に増加する現象 \\
+            2次元の格子が10の場合、合計100のセルが存在します。しかし、10次元の格子が各次元に10のセルを持つ場合、合計で$10^10 = 10,000,000,000$のセルが存在します。このように、次元が増加するにつれて格子の数が指数的に増加し、それに伴い計算量も指数的に増加します。
+        \end{tcolorbox}
+        次元の呪いのグラフを貼る \\
+        \centering
+    \end{frame}
+
+    \begin{frame}{現在位置}
+        \footnotesize
+        \begin{itemize}
+            \item 前回のおさらい
+            \item 動的計画法
+            \item \colorbox{yellow}{HJB方程式}
+            \item 最小原理
+            \item MPC導入
+        \end{itemize}
+        Bellman方程式からHJB方程式へ変形し最適制御が偏微分方程式で表せることを理解する\\
         \begin{align*}
+            V(x, t) &= \min_u \left( L(x, u, t) dt + V \left( x + f(x, u, t) dt, t + dt \right) \right)        
+        \end{align*}
+        \begin{align*}
+            -\frac{\partial V}{\partial t}\left(x,t\right) = \min _u H\left(x, u, \left( \frac{\partial V}{\partial x} \right)^T\left(x, t\right), t \right)
+        \end{align*}
+    \end{frame}
+
+    \begin{frame}{HJB方程式}
+        \scriptsize
+        \begin{align*}
+            V(x, t) &= \min_u \left( L(x, u, t) dt + V \left( x + f(x, u, t) dt, t + dt \right) \right)        
+        \end{align*}
+
+        \begin{align*}
+            &= \min_u \left( L(x, u, t) dt + V \left( x + f(x, u, t) dt, t + dt \right) \right)
             H(x, u, \lambda, t) &= L(x, u, t) + \lambda^T f(x, u, t) \\
             -\frac{\partial V}{\partial t}\left(x,t\right) = \min _u H\left(x, u, \left( \frac{\partial V}{\partial x} \right)^T\left(x, t\right), t \right)
         \end{align*}
-        \centering
-        次元の呪い\\
     \end{frame}
 
-    \begin{frame}{Pontryaginの最小原理}
+    \begin{frame}{HJB方程式の解法}
+        直接法\\
+        間接法\\
+        シューティング法とかの図をここに貼る \\
+    \end{frame}
+
+    \begin{frame}{現在位置}
         \footnotesize
+        \begin{itemize}
+            \item 前回のおさらい
+            \item 動的計画法
+            \item HJB方程式
+            \item \colorbox{yellow}{最小原理}
+            \item MPC導入
+        \end{itemize}
+        別の観点から最適制御を考える \\
+        \begin{figure}[H]
+            \includegraphics[clip, width = 2.0cm]{Pontryagin.png}
+        \end{figure}
+        \tiny{
+            \rightline{
+                Pontryagin
+            }
+        }
+    \end{frame}
+
+    \begin{frame}{最小原理1}
+        \footnotesize
+
+    \end{frame}
+
+    \begin{frame}{最小原理2}
+        \footnotesize
+        もちろん最小原理からHJB方程式を導ける
 
     \end{frame}
 
@@ -133,6 +269,23 @@
 
         ここに各関係の図を貼る
     \end{frame}
+    \begin{frame}{現在位置}
+        \footnotesize
+        \begin{itemize}
+            \item 前回のおさらい
+            \item 動的計画法
+            \item HJB方程式
+            \item 最小原理
+            \item \colorbox{yellow}{MPC導入}
+        \end{itemize}
+    \end{frame}
+
+    \begin{frame}{MPC}
+        Euler-Lagrange方程式では入力に状態を含んでいないので、状態が変化(外的要因によって)する現実システムだと扱いにくい \\
+        HJB方程式は入力に状態を含んでいるが、偏微分方程式なので扱いにくい \\
+        現実問題に落とし込んだのがMPC \\
+        評価区間が無限のMPCの解はHJB方程式と一致するはず(たぶん...) \\
+    \end{frame}
 
     \begin{frame}{参考資料}
         \footnotesize
@@ -142,15 +295,6 @@
             \item 非線形最適制御入門(名著です)
             \item しっかり学ぶ数理最適化(最適化全般について)
             \item はじめての最適化(変分法の説明が分かりやすいです)
-        \end{itemize}
-
-        サイト(URL) \\
-        \begin{itemize}
-            \item MyEnigmaのMPC導入: \href{https://myenigma.hatenablog.com/entry/2016/07/25/214014}{https://myenigma.hatenablog.com/entry/2016/07/25/214014}
-            \item MyEnigmaのMPC数式: \href{https://myenigma.hatenablog.com/entry/2017/02/07/084922}{https://myenigma.hatenablog.com/entry/2017/02/07/084922}
-            \item MPCの具体例: \href{https://ramune6110.hatenablog.com/entry/2022/02/13/154405}{https://ramune6110.hatenablog.com/entry/2022/02/13/154405}
-            \item MPCを用いた倒立振子: \href{https://qiita.com/slowsingle/items/f3074ea6670da42696e0}{https://qiita.com/slowsingle/items/f3074ea6670da42696e0}
-            \item MPCの説明と実機を用いた実験: \href{http://www.kostasalexis.com/linear-model-predictive-control.html}{http://www.kostasalexis.com/linear-model-predictive-control.html}
         \end{itemize}
     \end{frame}
     

@@ -83,10 +83,37 @@
     \end{frame}
 
     \begin{frame}{最適性条件まとめ}
-        \footnotesize
-        Lagrangeの未定乗数法\\
-        KKT条件\\
-        Euler-Lagrange方程式\\
+        \fontsize{6.5pt}{6.5pt}\selectfont
+
+        \begin{columns}
+            \begin{column}{.5\textwidth}
+                \begin{tcolorbox}[title=時間を考慮しない]
+                    離散時間MPCでは予め時間を考慮して出した式から出た最適化問題を解いたから\\
+                    最適化問題自体は時間を考慮しなくていい\\
+                    Lagrangeの未定乗数法\\
+                    \begin{align*}
+                        L(x, \lambda) = f(x) + \lambda^T g(x)
+                    \end{align*}
+                    KKT条件\\
+                    \begin{align*}
+                        \nabla f(x^*) &+ \sum_{i=1}^m \lambda_i^* \nabla g_i(x^*) + \sum_{j=1}^n \mu_j^* \nabla h_j(x^*) = 0 \\
+                        g_i(x^*) &\leq 0 \quad \text{for all } i \\
+                        \lambda_i^* &\geq 0 \quad \text{for all } i \\
+                        \lambda_i^* g_i(x^*) &= 0 \quad \text{for all } i \\
+                        h_j(x^*) &= 0 \quad \text{for all } j
+                    \end{align*}
+                \end{tcolorbox}
+            \end{column}
+
+            \begin{column}{.5\textwidth}
+                \begin{tcolorbox}[title=時間を考慮]
+                    Euler-Lagrange方程式\\
+                    \begin{align*}
+                        \frac{\partial L}{\partial x} - \frac{d}{dt} \left( \frac{\partial L}{\partial \dot{x}} \right) = 0
+                    \end{align*}
+                \end{tcolorbox}
+            \end{column}
+        \end{columns}
     \end{frame}
 
     \begin{frame}{最適化の多様な定式}
@@ -117,21 +144,21 @@
 
     \begin{frame}{動的計画法1}
         \footnotesize
-        \begin{align*}
-            \dot{x}(t) &= f(x(t), u(t), t) \\
-            H(x, u, \lambda, t) &= L(x, u, t) + \lambda^T f(x, u, t) \\
-            J &= \psi(x(t_f)) + \int_{t_0}^{t_f} L(x(t), u(t), t) \, dt
-        \end{align*}
+        \begin{tcolorbox}[title=最適制御]
+            \begin{align*}
+                \dot{x}(t) &= f(x(t), u(t), t) \\
+                J &= \psi(x(t_f)) + \int_{t_0}^{t_f} L(x(t), u(t), t) \, dt
+            \end{align*}
+        \end{tcolorbox}
+        
     
         別の表現を見てみる
     
+        価値関数$V(x, t)$:評価関数$J$を最小にする値\\
         \begin{align*}
             V(x, t) = \min_{u[t, t_f]} \left( \psi(x(t_f)) + \int_t^{t_f} L(x(\tau), u(\tau), \tau) d\tau \right)
         \end{align*}
-    
-
-
-        次元の呪い
+        最適化を価値関数を探すことだと考える
     
     \end{frame}
 
@@ -150,35 +177,32 @@
     \end{frame}
     
     \begin{frame}{動的計画法3}
-        \tiny
-        \begin{align*}
-            V(x, t) = \min_{u[t, t_f]} \left( \psi(x(t_f)) + \int_t^{t_f} L(x(\tau), u(\tau), \tau) d\tau \right)
-        \end{align*}
-        \begin{align*}
-            V(x, t) = \min_{u[t, t_f]} \left( \int_t^{t+dt} L(x(\tau), u(\tau), \tau) d\tau + \psi(x(t_f)) + \int_{t+dt}^{t_f} L(x(\tau), u(\tau), \tau) d\tau \right)
-        \end{align*}
+        \scriptsize
+        \fontsize{6.5pt}{6.5pt}\selectfont
 
         \begin{align*}
             V(x, t) &= \min_{u[t, t_f]} \left( \psi(x(t_f)) + \int_t^{t_f} L(x(\tau), u(\tau), \tau) d\tau \right) \\
-            &=\min_{u[t, t_f]} \left( \int_t^{t+dt} L(x(\tau), u(\tau), \tau) d\tau + \psi(x(t_f)) + \int_{t+dt}^{t_f} L(x(\tau), u(\tau), \tau) d\tau \right) \\
+            &= \min_{u[t, t_f]} \left( \int_t^{t+dt} L(x(\tau), u(\tau), \tau) d\tau + \colorbox{yellow}{$\psi(x(t_f)) + \int_{t+dt}^{t_f} L(x(\tau), u(\tau), \tau) d\tau$} \right) \\
             &= \min_{u[t, t+dt]} \left( \int_t^{t+dt} L(x(\tau), u(\tau), \tau) d\tau + \min_{u[t+dt, t_f]} \left( \psi(x(t_f)) + \int_{t+dt}^{t_f} L(x(\tau), u(\tau), \tau) d\tau \right) \right) \\
             &= \min_{u[t, t+dt]} \left( \int_t^{t+dt} L(x(\tau), u(\tau), \tau) d\tau + V \left( x + \int_t^{t+dt} f(x, u, \tau) d\tau, t + dt \right) \right) \\
         \end{align*}
 
         \begin{tcolorbox}[title=Bellman方程式]
             \begin{align*}
-                V(x, t) &= \min_u \left( L(x, u, t) dt + V \left( x + f(x, u, t) dt, t + dt \right) \right)
+                &V(x, t) &=& \min_{u[t, t+dt]} \left( L(x, u, t) dt + V \left( x + f(x, u, t) dt, t + dt \right) \right) \\
+                &V(x, t_f) &=& \psi(x(t_f))
             \end{align*}
         \end{tcolorbox}
 
-        動的計画法が解ければ最適制御ができる!!! \\
+        Bellman方程式が解ければ最適制御ができる!!!(もともとの評価関数を満たす解を求めるのと一緒) \\
+        目標の状態$x(t_f)$が分かっていれば解けそう?? \\
     \end{frame}
 
     \begin{frame}{HJB方程式}
         \footnotesize
         \begin{tcolorbox}[title=Bellman方程式]
             \begin{align*}
-                V(x, t) &= \min_u \left( L(x, u, t) dt + V \left( x + f(x, u, t) dt, t + dt \right) \right)
+                V(x, t) &= \min_{u[t, t+dt]} \left( L(x, u, t) dt + V \left( x + f(x, u, t) dt, t + dt \right) \right)
             \end{align*}
         \end{tcolorbox}
         \begin{tcolorbox}[title=次元の呪い]
@@ -210,10 +234,14 @@
     \begin{frame}{HJB方程式}
         \scriptsize
         \begin{align*}
-            V(x, t) &= \min_u \left( L(x, u, t) dt + V \left( x + f(x, u, t) dt, t + dt \right) \right)        
+            V(x, t) &= \min_{u[t, t+dt]} \left( L(x, u, t) dt + V \left( x + f(x, u, t) dt, t + dt \right) \right) \\
         \end{align*}
-
+        Taylor展開をする
         \begin{align*}
+            V \left( x + f(x, u, t) dt, t + dt \right) \simeq V \left(x, t\right) + \frac{\partial V}{\partial x}\left(x, t\right)f\left(x, u, t\right)dt + \frac{\partial V}{\partial t}\left(x, t\right)dt
+        \end{align*}
+        \begin{align*}
+            H(x, u, \lambda, t) &= L(x, u, t) + \lambda^T f(x, u, t) \\
             &= \min_u \left( L(x, u, t) dt + V \left( x + f(x, u, t) dt, t + dt \right) \right)
             H(x, u, \lambda, t) &= L(x, u, t) + \lambda^T f(x, u, t) \\
             -\frac{\partial V}{\partial t}\left(x,t\right) = \min _u H\left(x, u, \left( \frac{\partial V}{\partial x} \right)^T\left(x, t\right), t \right)

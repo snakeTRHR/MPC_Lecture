@@ -12,7 +12,8 @@
 \usepackage{color}
 \usepackage{tcolorbox}
 \usepackage{forest}
-
+\usepackage{ascmac}
+\usepackage{fancybox}
 \usetikzlibrary{arrows.meta}
 \usetikzlibrary{positioning}
 
@@ -33,6 +34,7 @@
     
     \begin{frame}{今回の目標}
         \footnotesize
+      
         \begin{equation*}
             -\frac{\partial V}{\partial t}\left(x,t\right) = \min _u H\left(x, u, \left( \frac{\partial V}{\partial x} \right)^T\left(x, t\right), t \right)
         \end{equation*}
@@ -87,7 +89,7 @@
 
         \begin{columns}
             \begin{column}{.5\textwidth}
-                \begin{tcolorbox}[title=時間を考慮しない]
+                \begin{itembox}[l]{時間を考慮しない}
                     離散時間MPCでは予め時間を考慮して出した式から出た最適化問題を解いたから\\
                     最適化問題自体は時間を考慮しなくていい\\
                     Lagrangeの未定乗数法\\
@@ -102,16 +104,16 @@
                         \lambda_i^* g_i(x^*) &= 0 \quad \text{for all } i \\
                         h_j(x^*) &= 0 \quad \text{for all } j
                     \end{align*}
-                \end{tcolorbox}
+                \end{itembox}
             \end{column}
 
             \begin{column}{.5\textwidth}
-                \begin{tcolorbox}[title=時間を考慮]
+                \begin{itembox}[l]{時間を考慮}
                     Euler-Lagrange方程式\\
                     \begin{align*}
                         \frac{\partial L}{\partial x} - \frac{d}{dt} \left( \frac{\partial L}{\partial \dot{x}} \right) = 0
                     \end{align*}
-                \end{tcolorbox}
+                \end{itembox}
             \end{column}
         \end{columns}
     \end{frame}
@@ -173,7 +175,11 @@
                 大塚:非線形最適制御入門
             }
         }
-
+        動的計画法は大きな問題を小さな部分問題に分解し、それぞれ解くことで全体の解を得る手法
+        \begin{itemize}
+            \item 最適的な性質を持つ
+            \item 計算結果を保存して再利用(メモ化)
+        \end{itemize}
     \end{frame}
     
     \begin{frame}{動的計画法3}
@@ -222,27 +228,38 @@
             \item 最小原理
             \item MPC導入
         \end{itemize}
-        Bellman方程式からHJB方程式へ変形し最適制御が偏微分方程式で表せることを理解する\\
-        \begin{align*}
-            V(x, t) &= \min_u \left( L(x, u, t) dt + V \left( x + f(x, u, t) dt, t + dt \right) \right)        
-        \end{align*}
-        \begin{align*}
-            -\frac{\partial V}{\partial t}\left(x,t\right) = \min _u H\left(x, u, \left( \frac{\partial V}{\partial x} \right)^T\left(x, t\right), t \right)
-        \end{align*}
+        \begin{itembox}[l]{Bellman方程式からHJB方程式への変形}
+            \begin{align*}
+                V(x, t) &= \min_u \left( L(x, u, t) dt + V \left( x + f(x, u, t) dt, t + dt \right) \right)        
+            \end{align*}
+            \begin{align*}
+                -\frac{\partial V}{\partial t}\left(x,t\right) = \min _u H\left(x, u, \left( \frac{\partial V}{\partial x} \right)^T\left(x, t\right), t \right)
+            \end{align*}
+        \end{itembox}
     \end{frame}
 
     \begin{frame}{HJB方程式}
-        \fontsize{6.5pt}{8.5pt}\selectfont
+        \fontsize{6.5pt}{6.5pt}\selectfont
 
+
+
+        \colorbox{yellow}{$V(x, t) = \min_{u} \left( L(x, u, t) dt + V \left( x + f(x, u, t) dt, t + dt \right) \right)$} \\
+        
+        \begin{itembox}[l]{$V \left( x + f(x, u, t) dt, t + dt \right)$を$(x, t)$周りでTaylor展開をする}
+            \begin{equation*}
+                V \left( x + f(x, u, t) dt, t + dt \right) \simeq V \left(x, t\right) + \frac{\partial V}{\partial x}\left(x, t\right)f\left(x, u, t\right)dt + \frac{\partial V}{\partial t}\left(x, t\right)dt
+            \end{equation*}
+        \end{itembox}
+        
         \begin{align*}
-            V(x, t) &= \min_{u[t, t+dt]} \left( L(x, u, t) dt + V \left( x + f(x, u, t) dt, t + dt \right) \right) \\
-            V \left( x + f(x, u, t) dt, t + dt \right) &\simeq V \left(x, t\right) + \frac{\partial V}{\partial x}\left(x, t\right)f\left(x, u, t\right)dt + \frac{\partial V}{\partial t}\left(x, t\right)dt \\
             V(x, t) &= \min_{u[t, t+dt]} \left( L(x, u, t) dt + V \left(x, t\right) + \frac{\partial V}{\partial x}\left(x, t\right)f\left(x, u, t\right)dt + \frac{\partial V}{\partial t}\left(x, t\right)dt \right) \\
             0&=\min_{u[t, t+dt]} \left( L(x, u, t) dt + \frac{\partial V}{\partial x}\left(x, t\right)f\left(x, u, t\right)dt + \frac{\partial V}{\partial t}\left(x, t\right)dt \right) \\
             H(x, u, \lambda, t) &= L(x, u, t) + \lambda^T f(x, u, t) \\
             H\left(x, u, \left( \frac{\partial V}{\partial x} \right)^T\left(x, t\right), t \right) &= L(x, u, t) + \frac{\partial V}{\partial x}\left(x, t\right)f\left(x, u, t\right) \\
-            -\frac{\partial V}{\partial t}\left(x,t\right) &= \min _u H\left(x, u, \left( \frac{\partial V}{\partial x} \right)^T\left(x, t\right), t \right) \\
         \end{align*}
+
+        \colorbox{yellow}{$-\frac{\partial V}{\partial t}\left(x,t\right) = \min _u H\left(x, u, \left( \frac{\partial V}{\partial x} \right)^T\left(x, t\right), t \right)$} \\
+
     \end{frame}
 
     \begin{frame}{HJB方程式の解法}

@@ -1,4 +1,4 @@
-This is e-pTeX, Version 3.141592653-p3.9.1-210218-2.6 (utf8.euc) (TeX Live 2022/dev/Debian) (preloaded format=platex 2023.9.25)  5 NOV 2023 22:52
+This is e-pTeX, Version 3.141592653-p3.9.1-210218-2.6 (utf8.euc) (TeX Live 2022/dev/Debian) (preloaded format=platex 2023.9.25)  6 NOV 2023 00:13
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1305,7 +1305,7 @@ Overfull \vbox (3.24857pt too high) detected at line 232
 [10
 
 ]
-Overfull \hbox (184.8904pt too wide) detected at line 249
+Overfull \hbox (2.00317pt too wide) detected at line 246
 []
  []
 
@@ -1351,10 +1351,10 @@ Package rerunfilecheck Info: File `mpc_lecture3.out' has not changed.
 Here is how much of TeX's memory you used:
  39319 strings out of 478741
  894899 string characters out of 5860982
- 1158814 words of memory out of 5000000
+ 1161812 words of memory out of 5000000
  57092 multiletter control sequences out of 15000+600000
  526794 words of font info for 123 fonts, out of 8000000 for 9000
  929 hyphenation exceptions out of 8191
  128i,18n,122p,1811b,986s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on mpc_lecture3.dvi (19 pages, 77644 bytes).
+Output written on mpc_lecture3.dvi (19 pages, 78292 bytes).

@@ -232,19 +232,16 @@
     \end{frame}
 
     \begin{frame}{HJB方程式}
-        \scriptsize
+        \fontsize{6.5pt}{8.5pt}\selectfont
+
         \begin{align*}
             V(x, t) &= \min_{u[t, t+dt]} \left( L(x, u, t) dt + V \left( x + f(x, u, t) dt, t + dt \right) \right) \\
-        \end{align*}
-        Taylor展開をする
-        \begin{align*}
-            V \left( x + f(x, u, t) dt, t + dt \right) \simeq V \left(x, t\right) + \frac{\partial V}{\partial x}\left(x, t\right)f\left(x, u, t\right)dt + \frac{\partial V}{\partial t}\left(x, t\right)dt
-        \end{align*}
-        \begin{align*}
+            V \left( x + f(x, u, t) dt, t + dt \right) &\simeq V \left(x, t\right) + \frac{\partial V}{\partial x}\left(x, t\right)f\left(x, u, t\right)dt + \frac{\partial V}{\partial t}\left(x, t\right)dt \\
+            V(x, t) &= \min_{u[t, t+dt]} \left( L(x, u, t) dt + V \left(x, t\right) + \frac{\partial V}{\partial x}\left(x, t\right)f\left(x, u, t\right)dt + \frac{\partial V}{\partial t}\left(x, t\right)dt \right) \\
+            0&=\min_{u[t, t+dt]} \left( L(x, u, t) dt + \frac{\partial V}{\partial x}\left(x, t\right)f\left(x, u, t\right)dt + \frac{\partial V}{\partial t}\left(x, t\right)dt \right) \\
             H(x, u, \lambda, t) &= L(x, u, t) + \lambda^T f(x, u, t) \\
-            &= \min_u \left( L(x, u, t) dt + V \left( x + f(x, u, t) dt, t + dt \right) \right)
-            H(x, u, \lambda, t) &= L(x, u, t) + \lambda^T f(x, u, t) \\
-            -\frac{\partial V}{\partial t}\left(x,t\right) = \min _u H\left(x, u, \left( \frac{\partial V}{\partial x} \right)^T\left(x, t\right), t \right)
+            H\left(x, u, \left( \frac{\partial V}{\partial x} \right)^T\left(x, t\right), t \right) &= L(x, u, t) + \frac{\partial V}{\partial x}\left(x, t\right)f\left(x, u, t\right) \\
+            -\frac{\partial V}{\partial t}\left(x,t\right) &= \min _u H\left(x, u, \left( \frac{\partial V}{\partial x} \right)^T\left(x, t\right), t \right) \\
         \end{align*}
     \end{frame}
 

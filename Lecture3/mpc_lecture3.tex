@@ -31,24 +31,31 @@
 \begin{document}
 
     \frame{\maketitle}
-    
+
     \begin{frame}{今回の目標}
-        \footnotesize
-      
         \begin{equation*}
             -\frac{\partial V}{\partial t}\left(x,t\right) = \min _u H\left(x, u, \left( \frac{\partial V}{\partial x} \right)^T\left(x, t\right), t \right)
         \end{equation*}
-        \centering
-        \begin{itemize}
-            \item \colorbox{yellow}{前回のおさらい}
-            \item 動的計画法
-            \item HJB方程式
-            \item 最小原理
-            \item MPC導入
-        \end{itemize}
     \end{frame}
 
+    \begin{frame}{現在位置}
+        \begin{columns}
+            \begin{column}{.5\textwidth}
+                \begin{itemize}
+                    \item \colorbox{yellow}{前回のおさらい}
+                    \item 動的計画法
+                    \item HJB方程式
+                    \item 最小原理
+                    \item MPC導入
+                \end{itemize}
+            \end{column}
     
+            \begin{column}{.5\textwidth}
+                今までの内容覚えてますか？\\
+                復習しましょう!!
+            \end{column}
+        \end{columns}
+    \end{frame}
 
     \begin{frame}{前回のおさらい}
         \scriptsize
@@ -63,8 +70,9 @@
                 \end{tcolorbox}
             \end{column}
             \begin{column}{.2\textwidth}
-                \centering
-                \tikz \draw[->](0,0) -- (1,0);
+                \tikz{
+                    \draw [line width = 1pt, double distance = 3pt, arrows = {-Stealth[length = 10mm, open]}](0, 0) -- (2, 0)
+                }                
             \end{column}
             \begin{column}{.4\textwidth}
                 \begin{tcolorbox}[title=変分法]
@@ -86,17 +94,19 @@
 
     \begin{frame}{最適性条件まとめ}
         \fontsize{6.5pt}{6.5pt}\selectfont
-
+        
         \begin{columns}
-            \begin{column}{.5\textwidth}
+            \begin{column}{.6\textwidth}
                 \begin{itembox}[l]{時間を考慮しない}
-                    離散時間MPCでは予め時間を考慮して出した式から出た最適化問題を解いたから\\
-                    最適化問題自体は時間を考慮しなくていい\\
-                    Lagrangeの未定乗数法\\
+                    \begin{itembox}[l]{線形MPC}
+                        予め時間を考慮して出した式から出た最適化問題を解いたから
+                        最適化問題自体は時間を考慮不要\\
+                    \end{itembox}
+                    \colorbox{yellow}{Lagrangeの未定乗数法}\\
                     \begin{align*}
                         L(x, \lambda) = f(x) + \lambda^T g(x)
                     \end{align*}
-                    KKT条件\\
+                    \colorbox{yellow}{KKT条件}\\
                     \begin{align*}
                         \nabla f(x^*) &+ \sum_{i=1}^m \lambda_i^* \nabla g_i(x^*) + \sum_{j=1}^n \mu_j^* \nabla h_j(x^*) = 0 \\
                         g_i(x^*) &\leq 0 \quad \text{for all } i \\
@@ -107,9 +117,12 @@
                 \end{itembox}
             \end{column}
 
-            \begin{column}{.5\textwidth}
+            \begin{column}{.55\textwidth}
                 \begin{itembox}[l]{時間を考慮}
-                    Euler-Lagrange方程式\\
+                    \begin{itembox}[l]{非線形MPC}
+                        時間で離散化せずに直接最適化問題を解きたい
+                    \end{itembox}
+                    \colorbox{yellow}{Euler-Lagrange方程式}\\
                     \begin{align*}
                         \frac{\partial L}{\partial x} - \frac{d}{dt} \left( \frac{\partial L}{\partial \dot{x}} \right) = 0
                     \end{align*}
@@ -119,67 +132,113 @@
     \end{frame}
 
     \begin{frame}{最適化の多様な定式}
+        \scriptsize
         Q.なぜ似たようなものがいくつもあるのか？？\\
 
         A.同時期(冷戦期)に2人の天才によって最適制御が定式化されたから\\
 
+        \vspace{5mm}
+
         \begin{columns}
 
             \begin{column}{0.5\textwidth}
-                \centering
-                \includegraphics[clip, width = 2.0cm]{Bellman.png}\\
-                {\tiny Bellman}
+                \begin{boxnote}
+                    \begin{columns}
+                        \begin{column}{.5\textwidth}
+                            \includegraphics[clip, width = 2.0cm]{Bellman.png}\\
+                            {\tiny Bellman}
+                            \centering
+                        \end{column}
+                        \begin{column}{.5\textwidth}
+                            Bellman方程式 \\
+                            HJB方程式 \\
+                        \end{column}
+                    \end{columns}
+                \end{boxnote}
             \end{column}
-        
+
             \begin{column}{0.5\textwidth}
-                \centering
-                \includegraphics[clip, width = 2.0cm]{Pontryagin.png}\\
-                {\tiny Pontryagin}
+                \begin{boxnote}
+                    \begin{columns}
+                        \begin{column}{.5\textwidth}
+                            \includegraphics[clip, width = 2.0cm]{Pontryagin.png}\\
+                            {\tiny Pontryagin}
+                            \centering
+                        \end{column}
+                        \begin{column}{.5\textwidth}
+                            最小原理 \\
+                        \end{column}
+                    \end{columns}
+                \end{boxnote}
             \end{column}
         \end{columns}
 
-        Bellmanによって動的計画法(Bellman方程式)\\
+    \end{frame}
 
-        Pontryaginによって最小原理(最大原理)\\
-
+    \begin{frame}{現在位置}
+        \footnotesize
+        \begin{columns}
+            \begin{column}{.35\textwidth}
+                \begin{itemize}
+                    \item \colorbox{yellow}{前回のおさらい}
+                    \item 動的計画法
+                    \item HJB方程式
+                    \item 最小原理
+                    \item MPC導入
+                \end{itemize}
+            \end{column}
+    
+            \begin{column}{.7\textwidth}
+                線形MPCでは離散状態を考えたけど、連続での制御を考える \\
+                \fontsize{6.5pt}{3.5pt}\selectfont
+                \begin{tcolorbox}[title=Bellman方程式]
+                    \begin{equation*}
+                        V(x, t) = \min_{u[t, t+dt]} \left( L(x, u, t) dt + V \left( x + f(x, u, t) dt, t + dt \right) \right)
+                    \end{equation*}
+                \end{tcolorbox}
+                
+            \end{column}
+        \end{columns}
     \end{frame}
 
     \begin{frame}{動的計画法1}
         \footnotesize
         \begin{tcolorbox}[title=最適制御]
-            \begin{align*}
-                \dot{x}(t) &= f(x(t), u(t), t) \\
-                J &= \psi(x(t_f)) + \int_{t_0}^{t_f} L(x(t), u(t), t) \, dt
-            \end{align*}
+            状態方程式 \quad $\dot{x}(t) = f(x(t), u(t), t)$ \\
+            評価関数 \qquad $J =$ 
+            \tikz[remember picture, baseline=(T1.base)]{
+                \node [fill=orange!20!white, inner sep=0pt, outer sep=0, minimum height=4ex] (T1) {$\phi(x(t_f))$};
+            }
+            $+$
+            \tikz[remember picture, baseline=(T2.base)]{
+                \node [fill=red!20!white, inner sep=0pt, outer sep=0, minimum height=4ex] (T2) {$\int_{t_0}^{t_f} L(x(t), u(t), t) \, dt$}
+            }
+             
+            \begin{tikzpicture}[remember picture, overlay]
+              \node [below=0pt of T1, text=orange!80!black] {終端コスト};
+              \node [below=0pt of T2, text=red!80!black] {ステージコスト};
+            \end{tikzpicture}
+
         \end{tcolorbox}
-        
     
-        別の表現を見てみる
-    
-        価値関数$V(x, t)$:評価関数$J$を最小にする値\\
+        \textcolor{blue}{価値関数$V(x, t)$}:評価関数$J$を最小にする値\\
         \begin{align*}
-            V(x, t) = \min_{u[t, t_f]} \left( \psi(x(t_f)) + \int_t^{t_f} L(x(\tau), u(\tau), \tau) d\tau \right)
+            \textcolor{blue}{V(x, t)} = \min_{u[t, t_f]} \left( \phi(x(t_f)) + \int_t^{t_f} L(x(\tau), u(\tau), \tau) d\tau \right)
         \end{align*}
-        最適化を価値関数を探すことだと考える
+        最適化を\textcolor{blue}{価値関数}を探すことだと考える
     
     \end{frame}
 
     \begin{frame}{動的計画法2}
-        \begin{figure}[H]
-            \centering
-            \includegraphics[clip, width = 4.0cm]{DP.png}
-        \end{figure}
-        \centering
-        \tiny{
-            \rightline{
-                大塚:非線形最適制御入門
-            }
-        }
-        動的計画法は大きな問題を小さな部分問題に分解し、それぞれ解くことで全体の解を得る手法
-        \begin{itemize}
-            \item 最適的な性質を持つ
-            \item 計算結果を保存して再利用(メモ化)
-        \end{itemize}
+        
+        \begin{columns}
+            \begin{column}{.5\textwidth}
+                
+            \end{column}
+
+            \begin{column}{.5\textwidth}
+            \end{column}
+        \end{columns}
     \end{frame}
     
     \begin{frame}{動的計画法3}
@@ -187,16 +246,16 @@
         \fontsize{6.5pt}{6.5pt}\selectfont
 
         \begin{align*}
-            V(x, t) &= \min_{u[t, t_f]} \left( \psi(x(t_f)) + \int_t^{t_f} L(x(\tau), u(\tau), \tau) d\tau \right) \\
-            &= \min_{u[t, t_f]} \left( \int_t^{t+dt} L(x(\tau), u(\tau), \tau) d\tau + \colorbox{yellow}{$\psi(x(t_f)) + \int_{t+dt}^{t_f} L(x(\tau), u(\tau), \tau) d\tau$} \right) \\
-            &= \min_{u[t, t+dt]} \left( \int_t^{t+dt} L(x(\tau), u(\tau), \tau) d\tau + \min_{u[t+dt, t_f]} \left( \psi(x(t_f)) + \int_{t+dt}^{t_f} L(x(\tau), u(\tau), \tau) d\tau \right) \right) \\
+            V(x, t) &= \min_{u[t, t_f]} \left( \phi(x(t_f)) + \int_t^{t_f} L(x(\tau), u(\tau), \tau) d\tau \right) \\
+            &= \min_{u[t, t_f]} \left( \int_t^{t+dt} L(x(\tau), u(\tau), \tau) d\tau + \colorbox{yellow}{$\phi(x(t_f)) + \int_{t+dt}^{t_f} L(x(\tau), u(\tau), \tau) d\tau$} \right) \\
+            &= \min_{u[t, t+dt]} \left( \int_t^{t+dt} L(x(\tau), u(\tau), \tau) d\tau + \min_{u[t+dt, t_f]} \left( \phi(x(t_f)) + \int_{t+dt}^{t_f} L(x(\tau), u(\tau), \tau) d\tau \right) \right) \\
             &= \min_{u[t, t+dt]} \left( \int_t^{t+dt} L(x(\tau), u(\tau), \tau) d\tau + V \left( x + \int_t^{t+dt} f(x, u, \tau) d\tau, t + dt \right) \right) \\
         \end{align*}
 
         \begin{tcolorbox}[title=Bellman方程式]
             \begin{align*}
                 &V(x, t) &=& \min_{u[t, t+dt]} \left( L(x, u, t) dt + V \left( x + f(x, u, t) dt, t + dt \right) \right) \\
-                &V(x, t_f) &=& \psi(x(t_f))
+                &V(x, t_f) &=& \phi(x(t_f))
             \end{align*}
         \end{tcolorbox}
 
@@ -204,7 +263,7 @@
         目標の状態$x(t_f)$が分かっていれば解けそう?? \\
     \end{frame}
 
-    \begin{frame}{HJB方程式}
+    \begin{frame}{動的計画法4}
         \footnotesize
         \begin{tcolorbox}[title=Bellman方程式]
             \begin{align*}
@@ -217,6 +276,21 @@
         \end{tcolorbox}
         次元の呪いのグラフを貼る \\
         \centering
+    \end{frame}
+
+    \begin{frame}{動的計画法まとめ}
+        動的計画法は大きな問題を小さな部分問題に分解し、それぞれ解くことで全体の解を得る手法
+
+        \begin{tcolorbox}[title=Bellman方程式]
+            \begin{align*}
+                V(x, t) &= \min_{u[t, t+dt]} \left( L(x, u, t) dt + V \left( x + f(x, u, t) dt, t + dt \right) \right)
+            \end{align*}
+        \end{tcolorbox}
+
+        \begin{itemize}
+            \item 最適的な性質を持つ
+            \item 計算結果を保存して再利用(メモ化)
+        \end{itemize}
     \end{frame}
 
     \begin{frame}{現在位置}
@@ -241,15 +315,13 @@
     \begin{frame}{HJB方程式}
         \fontsize{6.5pt}{6.5pt}\selectfont
 
-
-
         \colorbox{yellow}{$V(x, t) = \min_{u} \left( L(x, u, t) dt + V \left( x + f(x, u, t) dt, t + dt \right) \right)$} \\
         
-        \begin{itembox}[l]{$V \left( x + f(x, u, t) dt, t + dt \right)$を$(x, t)$周りでTaylor展開をする}
-            \begin{equation*}
-                V \left( x + f(x, u, t) dt, t + dt \right) \simeq V \left(x, t\right) + \frac{\partial V}{\partial x}\left(x, t\right)f\left(x, u, t\right)dt + \frac{\partial V}{\partial t}\left(x, t\right)dt
-            \end{equation*}
-        \end{itembox}
+        $V \left( x + f(x, u, t) dt, t + dt \right)$を$(x, t)$でTaylor展開する\\
+        \begin{equation*}
+            V \left( x + f(x, u, t) dt, t + dt \right) \simeq V \left(x, t\right) + \frac{\partial V}{\partial x}\left(x, t\right)f\left(x, u, t\right)dt + \frac{\partial V}{\partial t}\left(x, t\right)dt
+        \end{equation*}
+ 
         
         \begin{align*}
             V(x, t) &= \min_{u[t, t+dt]} \left( L(x, u, t) dt + V \left(x, t\right) + \frac{\partial V}{\partial x}\left(x, t\right)f\left(x, u, t\right)dt + \frac{\partial V}{\partial t}\left(x, t\right)dt \right) \\
@@ -260,12 +332,6 @@
 
         \colorbox{yellow}{$-\frac{\partial V}{\partial t}\left(x,t\right) = \min _u H\left(x, u, \left( \frac{\partial V}{\partial x} \right)^T\left(x, t\right), t \right)$} \\
 
-    \end{frame}
-
-    \begin{frame}{HJB方程式の解法}
-        直接法\\
-        間接法\\
-        シューティング法とかの図をここに貼る \\
     \end{frame}
 
     \begin{frame}{現在位置}

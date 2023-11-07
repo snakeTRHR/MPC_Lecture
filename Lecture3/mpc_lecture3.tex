@@ -17,6 +17,7 @@
 \usetikzlibrary{arrows.meta}
 \usetikzlibrary{positioning}
 \usetikzlibrary{decorations.pathreplacing,calligraphy}
+\usetikzlibrary{patterns}
 \usetheme{metropolis}  
 
 % blockのスタイルをカスタマイズ
@@ -84,7 +85,7 @@
             状態方程式 \quad $\dot{x}(t) = f(x(t), u(t), t)$ \\
             評価関数 \qquad $J =$ 
             \tikz[remember picture, baseline=(T1.base)]{
-                \node [fill=orange!20!white, inner sep=0pt, outer sep=0, minimum height=4ex] (T1) {$\phi(x(t_f))$};
+                \node [fill=orange!20!white, inner sep=0pt, outer sep=0, minimum height=4ex] (T1) {$\varphi(x(t_f))$};
             }
             $+$
             \tikz[remember picture, baseline=(T2.base)]{
@@ -168,6 +169,9 @@
                     \begin{align*}
                         \frac{\partial L}{\partial x} - \frac{d}{dt} \left( \frac{\partial L}{\partial \dot{x}} \right) = 0
                     \end{align*}
+                    \begin{tikzpicture}
+                        \draw[<-](0, 0)node[below]{HJB方程式}--(0,1)node[above]{Bellman方程式};
+                    \end{tikzpicture}
                 \end{itembox}
             \end{column}
         \end{columns}
@@ -249,7 +253,7 @@
             状態方程式 \quad $\dot{x}(t) = f(x(t), u(t), t)$ \\
             評価関数 \qquad $J =$ 
             \tikz[remember picture, baseline=(T1.base)]{
-                \node [fill=orange!20!white, inner sep=0pt, outer sep=0, minimum height=4ex] (T1) {$\phi(x(t_f))$};
+                \node [fill=orange!20!white, inner sep=0pt, outer sep=0, minimum height=4ex] (T1) {$\varphi(x(t_f))$};
             }
             $+$
             \tikz[remember picture, baseline=(T2.base)]{
@@ -265,7 +269,8 @@
     
         \textcolor{blue}{価値関数$V(x, t)$}:評価関数$J$を最小にする値\\
         \begin{align*}
-            \textcolor{blue}{V(x, t)} = \min_{u[t, t_f]} \left( \phi(x(t_f)) + \int_t^{t_f} L(x(\tau), u(\tau), \tau) d\tau \right)
+            &\textcolor{blue}{V(x, t)} = \min_{u[t, t_f]} \left( \varphi(x(t_f)) + \int_t^{t_f} L(x(\tau), u(\tau), \tau) d\tau \right) \\
+            &V(x, t_f) = \varphi(x(t_f))
         \end{align*}
         最適化を\textcolor{blue}{価値関数}を探すことだと考える
     
@@ -299,7 +304,8 @@
             \draw[->, >=stealth, semithick](-0.5, 0)--(7.5, 0)node[right]{$t$};
             \draw[->, >=stealth, semithick](0, -0.5)--(0, 2.5)node[above]{$x$};
             
-            \filldraw[fill=orange](3.5, 0.0)--(6.0, 0.0)--(6.0, 2.5)--(3.5, 2.5)--cycle;
+            %\filldraw[fill=orange](3.5, 0.0)--(6.0, 0.0)--(6.0, 2.5)--(3.5, 2.5)--cycle;
+            \path [pattern=north east lines, pattern color=orange] (3.5,0) rectangle (6.0, 2.5);
 
             \draw[dashed](1.5, -0.5)node[below]{$t_0$}--(1.5, 2.5);
             \draw[dashed](6.0, -0.5)node[below]{$t_f$}--(6.0, 2.5);
@@ -334,16 +340,16 @@
         \fontsize{6.5pt}{6.5pt}\selectfont
 
         \begin{align*}
-            V(x, t) &= \min_{u[t, t_f]} \left( \phi(x(t_f)) + \int_t^{t_f} L(x(\tau), u(\tau), \tau) d\tau \right) \\
-            &= \min_{u[t, t_f]} \left( \int_t^{t+dt} L(x(\tau), u(\tau), \tau) d\tau + \colorbox{yellow}{$\phi(x(t_f)) + \int_{t+dt}^{t_f} L(x(\tau), u(\tau), \tau) d\tau$} \right) \\
-            &= \min_{u[t, t+dt]} \left( \int_t^{t+dt} L(x(\tau), u(\tau), \tau) d\tau + \min_{u[t+dt, t_f]} \left( \phi(x(t_f)) + \int_{t+dt}^{t_f} L(x(\tau), u(\tau), \tau) d\tau \right) \right) \\
-            &= \min_{u[t, t+dt]} \left( \int_t^{t+dt} L(x(\tau), u(\tau), \tau) d\tau + V \left( x + \int_t^{t+dt} f(x, u, \tau) d\tau, t + dt \right) \right) \\
+            V(x, t) &= \min_{u[t, t_f]} \left( \varphi(x(t_f)) + {\color{red}\int_t^{t_f} L(x(\tau), u(\tau), \tau) d\tau} \right) \\
+            &= {\color{blue}\min_{u[t, t_f]}} \left( {\color{red}\int_t^{t+dt} L(x(\tau), u(\tau), \tau) d\tau} + \colorbox{yellow}{$\varphi(x(t_f)) + {\color{red}\int_{t+dt}^{t_f} L(x(\tau), u(\tau), \tau) d\tau}$} \right) \\
+            &= {\color{blue}\min_{u[t, t+dt]}} \left( \int_t^{t+dt} L(x(\tau), u(\tau), \tau) d\tau + \colorbox{yellow}{${\color{blue}\min_{u[t+dt, t_f]}} \left( \varphi(x(t_f)) + \int_{t+dt}^{t_f} L(x(\tau), u(\tau), \tau) d\tau \right) $} \right) \\
+            &= \min_{u[t, t+dt]} \left( \int_t^{t+dt} L(x(\tau), u(\tau), \tau) d\tau + \colorbox{yellow}{$V \left( x + \int_t^{t+dt} f(x, u, \tau) d\tau, t + dt \right)$} \right) \\
         \end{align*}
 
         \begin{tcolorbox}[title=Bellman方程式]
             \begin{align*}
                 &V(x, t) &=& \min_{u[t, t+dt]} \left( L(x, u, t) dt + V \left( x + f(x, u, t) dt, t + dt \right) \right) \\
-                &V(x, t_f) &=& \phi(x(t_f))
+                &V(x, t_f) &=& \varphi(x(t_f))
             \end{align*}
         \end{tcolorbox}
 

@@ -16,7 +16,7 @@
 \usepackage{fancybox}
 \usetikzlibrary{arrows.meta}
 \usetikzlibrary{positioning}
-
+\usetikzlibrary{decorations.pathreplacing,calligraphy}
 \usetheme{metropolis}  
 
 % blockのスタイルをカスタマイズ
@@ -70,8 +70,11 @@
                     \fill[black](6.0, 2.5)circle(0.1)node[right]{$(t_f, x_f)$};
                 }
                 \draw[thick, black](1.5, 1.5)to[out=30, in=170](6.0, 2.5);
+                \draw[thick, dashed, black](1.5, 1.5)to[out=50, in=150](6.0, 2.5);
+                \draw[thick, dashed, black](1.5, 1.5)to[out=10, in=205](6.0, 2.5);
+
                 \large{
-                    \draw(3.7, 2.7)node{？};
+                    \draw(3.7, 3.3)node{？};
                 }
             \end{tikzpicture}
         }
@@ -269,41 +272,61 @@
     \end{frame}
 
     \begin{frame}{動的計画法2}
-        
-        \begin{columns}
-            \begin{column}{.5\textwidth}
-                \begin{tikzpicture}
-                    \draw[->, >=stealth, semithick](-0.5, 0)--(3.5, 0)node[right]{$x$};
-                    \draw[->, >=stealth, semithick](0, -0.5)--(0, 3.5)node[above]{$y$};
-                    \draw[dashed](1, -0.5)node[below]{$t_0$}--(1, 3.5);
-                    \draw[dashed](3, -0.5)node[below]{$t_f$}--(3, 3.5);
-                \end{tikzpicture}
-            \end{column}
+        \centering
+        \begin{tikzpicture}
+            \draw[->, >=stealth, semithick](-0.5, 0)--(7.5, 0)node[right]{$t$};
+            \draw[->, >=stealth, semithick](0, -0.5)--(0, 2.5)node[above]{$x$};
+            
+            \draw[dashed](1.5, -0.5)node[below]{$t_0$}--(1.5, 2.5);
+            \draw[dashed](6.0, -0.5)node[below]{$t_f$}--(6.0, 2.5);
 
-            \begin{column}{.5\textwidth}
-                \begin{tikzpicture}
-                    \coordinate(A)at(0, 0);
-                    \coordinate(B)at(1, 0);
-                    \draw[->](A)--(B);
-                    \draw(A)node[left]{$t_0$};
-                    \draw(B)node[right]{$t_f$};
-                \end{tikzpicture}
+            \footnotesize{
+                \fill[black](1.5, 1.0)circle(0.1)node[left]{$(t_0, x_0)$};
+                \fill[black](6.0, 2.0)circle(0.1)node[right]{$(t_f, x_f)$};
+            }
 
-                \begin{tikzpicture}
-                    \coordinate(A)at(0, 0);
-                    \coordinate(B)at(0.5, 0);
-                    \draw[->](A)--(B);
-                    \draw(A)node[left]{$t_0$};
-                    \draw(B)node[right]{$t_0+dt$};
+            \draw[thick, black](1.5, 1.0)to[out=30, in=170](6.0, 2.0);
+            \draw[thick, dashed, black](1.5, 1.0)to[out=50, in=150](6.0, 2.0);
+            \draw[thick, dashed, black](1.5, 1.0)to[out=10, in=205](6.0, 2.0);
 
-                    \coordinate(C)at(4.0, 0);
-                    \coordinate(D)at(4.5, 0);
-                    \draw[->](C)--(D);
-                    \draw(C)node[left]{$t_0+dt$};
-                    \draw(D)node[right]{$t_f$};
-                \end{tikzpicture}
-            \end{column}
-        \end{columns}
+
+
+            \large{
+                \draw(3.7, 2.7)node{？};
+            }
+        \end{tikzpicture}
+        \begin{tikzpicture}
+            \draw[->, >=stealth, semithick](-0.5, 0)--(7.5, 0)node[right]{$t$};
+            \draw[->, >=stealth, semithick](0, -0.5)--(0, 2.5)node[above]{$x$};
+            
+            \filldraw[fill=orange](3.5, 0.0)--(6.0, 0.0)--(6.0, 2.5)--(3.5, 2.5)--cycle;
+
+            \draw[dashed](1.5, -0.5)node[below]{$t_0$}--(1.5, 2.5);
+            \draw[dashed](6.0, -0.5)node[below]{$t_f$}--(6.0, 2.5);
+
+            \footnotesize{
+                \fill[black](1.5, 1.0)circle(0.1)node[left]{$(t_0, x_0)$};
+                \fill[black](6.0, 2.0)circle(0.1)node[right]{$(t_f, x_f)$};
+                \fill[black](3.5, 1.9)circle(0.1);
+            }
+
+            \draw[thick, dashed, black](1.5, 1.0)to[out=30, in=198.5](3.5, 1.9);
+
+            \draw[thick, dashed, black](1.5, 1.0)to[out=70, in=170](3.5, 1.9);
+            \draw[thick, dashed, black](1.5, 1.0)to[out=-10, in=210](3.5, 1.9);
+
+            \large{
+                \draw(2.5, 2.2)node{？};
+            }
+
+            \draw[thick, black](3.5, 1.9)to[out=11.5, in=170](6.0, 2.0);
+
+
+            \scriptsize
+            \draw[decorate,decoration = {brace, mirror, amplitude=6pt}] (1.5,0)--(3.5,0)node[midway, yshift=-1.5em]{最適化};
+            \draw[decorate,decoration = {brace, mirror, amplitude=6pt}] (3.5,0)--(6.0,0)node[midway, yshift=-1.5em]{最適化済み};
+
+        \end{tikzpicture}
     \end{frame}
     
     \begin{frame}{動的計画法3}

@@ -444,18 +444,20 @@
     \end{frame}
 
     \begin{frame}{HJB方程式}
-        \fontsize{8.5pt}{6.5pt}\selectfont
+        \fontsize{8.8pt}{6.5pt}\selectfont
 
         \begin{tikzpicture}
-            \draw[->, black, very thick] (0, 0) node[above right]{\colorbox{yellow}{$V(x, t) = \min_{u} \left( L(x, u, t) dt + V \left( x + f(x, u, t) dt, t + dt \right) \right)$}} -- (0, -6) node[below right]{\colorbox{yellow}{$-\frac{\partial V}{\partial t}\left(x,t\right) = \min _u H\left(x, u, \left( \frac{\partial V}{\partial x} \right)^T\left(x, t\right), t \right)$}};
-            \fill[white] (0.5, -0.5) circle (0.1) node[right, black] {$(x, t)$でTaylor展開する};
-            \fill[white] (0.5, -1) circle (0.1) node[right, black]{$V \left( x + f(x, u, t) dt, t + dt \right) \simeq V \left(x, t\right) + \frac{\partial V}{\partial x}\left(x, t\right)f\left(x, u, t\right)dt + \frac{\partial V}{\partial t}\left(x, t\right)dt$};
-            \fill[white] (0.5, -2) circle (0.1) node[right, black]{\colorbox{yellow}{$V(x, t) = \min_{u[t, t+dt]} \left( L(x, u, t) dt + V \left(x, t\right) + \frac{\partial V}{\partial x}\left(x, t\right)f\left(x, u, t\right)dt + \frac{\partial V}{\partial t}\left(x, t\right)dt \right)$}};
-            \fill[white] (0.5, -3) circle (0.1) node[right, black]{\colorbox{yellow}{$0 = \min_{u[t, t+dt]} \left( L(x, u, t) + \frac{\partial V}{\partial x}\left(x, t\right)f\left(x, u, t\right) + \frac{\partial V}{\partial t}\left(x, t\right) \right) dt$}};
+            \draw[->, black, very thick] (-1, 0.0) node[above right]{\colorbox{yellow}{$V(x, t) = \min_{u} \left( L(x, u, t) dt + V \left( x + f(x, u, t) dt, t + dt \right) \right)$}} -- (-1, -2.0) ;
+            
+            \fill[white] (-0.5, -0.5) circle (0.1) node[right, black] {$(x, t)$でTaylor展開する};
+            \fill[white] (-0.5, -1) circle (0.1) node[right, black]{$V \left( x + f(x, u, t) dt, t + dt \right) \simeq V \left(x, t\right) + \frac{\partial V}{\partial x}\left(x, t\right)f\left(x, u, t\right)dt + \frac{\partial V}{\partial t}\left(x, t\right)dt$};
+            
+            \draw[->, black, very thick] (-1, -2.8)node[above right, black]{\colorbox{yellow}{$V(x, t) = \min_{u[t, t+dt]} \left( L(x, u, t) dt + V \left(x, t\right) + \frac{\partial V}{\partial x}\left(x, t\right)f\left(x, u, t\right)dt + \frac{\partial V}{\partial t}\left(x, t\right)dt \right)$}}--(-1, -3.0)node[below right, black]{\colorbox{yellow}{$0 = \min_{u[t, t+dt]} \left( L(x, u, t) + \frac{\partial V}{\partial x}\left(x, t\right)f\left(x, u, t\right) + \frac{\partial V}{\partial t}\left(x, t\right) \right) dt$}};
+            \draw[->, black, very thick] (-1, -3.8)--(-1,-6.3)node[below right]{\colorbox{yellow}{$-\frac{\partial V}{\partial t}\left(x,t\right) = \min _u H\left(x, u, \left( \frac{\partial V}{\partial x} \right)^T\left(x, t\right), t \right)$}};
     
-            \fill[white] (0.5, -5) circle (0.1) node[right, black] {
+            \fill[white] (-0.5, -5) circle (0.1) node[right, black] {
                 \begin{minipage}{\textwidth}
-                    ハミルトニアンでまとめる
+                    Hamiltonianでまとめる
                     \begin{align*}
                         H(x, u, \lambda, t) &= L(x, u, t) + \lambda^T f(x, u, t) \\
                         H\left(x, u, \left( \frac{\partial V}{\partial x} \right)^T\left(x, t\right), t \right) &= L(x, u, t) + \frac{\partial V}{\partial x}\left(x, t\right)f\left(x, u, t\right)    
@@ -467,24 +469,25 @@
     \end{frame}
 
     \begin{frame}{HJB方程式}
-        \fontsize{6.5pt}{6.5pt}\selectfont
+        \fontsize{8.5pt}{6.5pt}\selectfont
 
-        \colorbox{yellow}{$V(x, t) = \min_{u} \left( L(x, u, t) dt + V \left( x + f(x, u, t) dt, t + dt \right) \right)$} \\
-        
-        $V \left( x + f(x, u, t) dt, t + dt \right)$を$(x, t)$でTaylor展開する\\
-        \begin{equation*}
-            V \left( x + f(x, u, t) dt, t + dt \right) \simeq V \left(x, t\right) + \frac{\partial V}{\partial x}\left(x, t\right)f\left(x, u, t\right)dt + \frac{\partial V}{\partial t}\left(x, t\right)dt
-        \end{equation*}
- 
-        
-        \begin{align*}
-            V(x, t) &= \min_{u[t, t+dt]} \left( L(x, u, t) dt + V \left(x, t\right) + \frac{\partial V}{\partial x}\left(x, t\right)f\left(x, u, t\right)dt + \frac{\partial V}{\partial t}\left(x, t\right)dt \right) \\
-            0&=\min_{u[t, t+dt]} \left( L(x, u, t) dt + \frac{\partial V}{\partial x}\left(x, t\right)f\left(x, u, t\right)dt + \frac{\partial V}{\partial t}\left(x, t\right)dt \right) \\
-            H(x, u, \lambda, t) &= L(x, u, t) + \lambda^T f(x, u, t) \\
-            H\left(x, u, \left( \frac{\partial V}{\partial x} \right)^T\left(x, t\right), t \right) &= L(x, u, t) + \frac{\partial V}{\partial x}\left(x, t\right)f\left(x, u, t\right) \\
-        \end{align*}
-
-        \colorbox{yellow}{$-\frac{\partial V}{\partial t}\left(x,t\right) = \min _u H\left(x, u, \left( \frac{\partial V}{\partial x} \right)^T\left(x, t\right), t \right)$} \\
+        \begin{tikzpicture}
+            \draw[->, black, very thick] (0, 0) node[above right]{\colorbox{yellow}{$V(x, t) = \min_{u} \left( L(x, u, t) dt + V \left( x + f(x, u, t) dt, t + dt \right) \right)$}} -- (0, -6) node[below right]{\colorbox{yellow}{$-\frac{\partial V}{\partial t}\left(x,t\right) = \min _u H\left(x, u, \left( \frac{\partial V}{\partial x} \right)^T\left(x, t\right), t \right)$}};
+            \fill[white] (0.5, -0.5) circle (0.1) node[right, black] {$(x, t)$でTaylor展開する};
+            \fill[white] (0.5, -1) circle (0.1) node[right, black]{$V \left( x + f(x, u, t) dt, t + dt \right) \simeq V \left(x, t\right) + \frac{\partial V}{\partial x}\left(x, t\right)f\left(x, u, t\right)dt + \frac{\partial V}{\partial t}\left(x, t\right)dt$};
+            \fill[white] (0, -2) circle (0.1) node[right, black]{\colorbox{yellow}{$V(x, t) = \min_{u[t, t+dt]} \left( L(x, u, t) dt + V \left(x, t\right) + \frac{\partial V}{\partial x}\left(x, t\right)f\left(x, u, t\right)dt + \frac{\partial V}{\partial t}\left(x, t\right)dt \right)$}};
+            \fill[white] (0, -3) circle (0.1) node[right, black]{\colorbox{yellow}{$0 = \min_{u[t, t+dt]} \left( L(x, u, t) + \frac{\partial V}{\partial x}\left(x, t\right)f\left(x, u, t\right) + \frac{\partial V}{\partial t}\left(x, t\right) \right) dt$}};
+    
+            \fill[white] (0.5, -5) circle (0.1) node[right, black] {
+                \begin{minipage}{\textwidth}
+                    ハミルトニアンでまとめる
+                    \begin{align*}
+                        H(x, u, \lambda, t) &= L(x, u, t) + \lambda^T f(x, u, t) \\
+                        H\left(x, u, \left( \frac{\partial V}{\partial x} \right)^T\left(x, t\right), t \right) &= L(x, u, t) + \frac{\partial V}{\partial x}\left(x, t\right)f\left(x, u, t\right)    
+                    \end{align*}
+                \end{minipage}
+            };
+        \end{tikzpicture}
 
     \end{frame}
 

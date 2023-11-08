@@ -258,14 +258,16 @@
             \end{column}
     
             \begin{column}{.7\textwidth}
-                線形MPCでは離散状態を考えたけど、連続での制御を考える \\
-                \fontsize{6.5pt}{3.5pt}\selectfont
-                \begin{tcolorbox}[title=Bellman方程式]
+                \fontsize{7.5pt}{3.5pt}\selectfont
+                \begin{screen}
                     \begin{equation*}
                         V(x, t) = \min_{u[t, t+dt]} \left( L(x, u, t) dt + V \left( x + f(x, u, t) dt, t + dt \right) \right)
                     \end{equation*}
-                \end{tcolorbox}
-                
+                \end{screen}
+                \footnotesize
+                方針:\\
+                \qquad 問題を分割して最適制御を考える \\
+
             \end{column}
         \end{columns}
     \end{frame}
@@ -360,7 +362,15 @@
     
     \begin{frame}{動的計画法3}
         \scriptsize
-        \fontsize{6.5pt}{6.5pt}\selectfont
+
+        \begin{block}{Bellman方程式}
+            \begin{align*}
+                &V(x, t) = \min_{u[t, t+dt]} \left( L(x, u, t) dt + V \left( x + f(x, u, t) dt, t + dt \right) \right) \\
+                &V(x, t_f) = \varphi(x(t_f))
+            \end{align*}
+        \end{block}
+
+        \fontsize{7.5pt}{6.5pt}\selectfont
 
         \begin{align*}
             V(x, t) &= \min_{u[t, t_f]} \left( \varphi(x(t_f)) + {\color{red}\int_t^{t_f} L(x(\tau), u(\tau), \tau) d\tau} \right) \\
@@ -369,15 +379,6 @@
             &= \min_{u[t, t+dt]} \left( \int_t^{t+dt} L(x(\tau), u(\tau), \tau) d\tau + \colorbox{yellow}{$V \left( x + \int_t^{t+dt} f(x, u, \tau) d\tau, t + dt \right)$} \right) \\
         \end{align*}
 
-        \begin{tcolorbox}[title=Bellman方程式]
-            \begin{align*}
-                &V(x, t) &=& \min_{u[t, t+dt]} \left( L(x, u, t) dt + V \left( x + f(x, u, t) dt, t + dt \right) \right) \\
-                &V(x, t_f) &=& \varphi(x(t_f))
-            \end{align*}
-        \end{tcolorbox}
-
-        Bellman方程式が解ければ最適制御ができる!!!(もともとの評価関数を満たす解を求めるのと一緒) \\
-        目標の状態$x(t_f)$が分かっていれば解けそう?? \\
     \end{frame}
 
     \begin{frame}{動的計画法4}
@@ -436,10 +437,33 @@
                     }
                 \end{screen}
                 方針:\\
-                微分の形にしたい$\rightarrow$ Taylor展開\\
-                Hamiltonianでまとめられそう\\
+                \qquad 微分の形にしたい$\rightarrow$ Taylor展開\\
+                \qquad Hamiltonianでまとめられそう\\
             \end{column}
         \end{columns}
+    \end{frame}
+
+    \begin{frame}{HJB方程式}
+        \fontsize{8.5pt}{6.5pt}\selectfont
+
+        \begin{tikzpicture}
+            \draw[->, black, very thick] (0, 0) node[above right]{\colorbox{yellow}{$V(x, t) = \min_{u} \left( L(x, u, t) dt + V \left( x + f(x, u, t) dt, t + dt \right) \right)$}} -- (0, -6) node[below right]{\colorbox{yellow}{$-\frac{\partial V}{\partial t}\left(x,t\right) = \min _u H\left(x, u, \left( \frac{\partial V}{\partial x} \right)^T\left(x, t\right), t \right)$}};
+            \fill[white] (0.5, -0.5) circle (0.1) node[right, black] {$(x, t)$でTaylor展開する};
+            \fill[white] (0.5, -1) circle (0.1) node[right, black]{$V \left( x + f(x, u, t) dt, t + dt \right) \simeq V \left(x, t\right) + \frac{\partial V}{\partial x}\left(x, t\right)f\left(x, u, t\right)dt + \frac{\partial V}{\partial t}\left(x, t\right)dt$};
+            \fill[white] (0.5, -2) circle (0.1) node[right, black]{\colorbox{yellow}{$V(x, t) = \min_{u[t, t+dt]} \left( L(x, u, t) dt + V \left(x, t\right) + \frac{\partial V}{\partial x}\left(x, t\right)f\left(x, u, t\right)dt + \frac{\partial V}{\partial t}\left(x, t\right)dt \right)$}};
+            \fill[white] (0.5, -3) circle (0.1) node[right, black]{\colorbox{yellow}{$0 = \min_{u[t, t+dt]} \left( L(x, u, t) + \frac{\partial V}{\partial x}\left(x, t\right)f\left(x, u, t\right) + \frac{\partial V}{\partial t}\left(x, t\right) \right) dt$}};
+    
+            \fill[white] (0.5, -5) circle (0.1) node[right, black] {
+                \begin{minipage}{\textwidth}
+                    ハミルトニアンでまとめる
+                    \begin{align*}
+                        H(x, u, \lambda, t) &= L(x, u, t) + \lambda^T f(x, u, t) \\
+                        H\left(x, u, \left( \frac{\partial V}{\partial x} \right)^T\left(x, t\right), t \right) &= L(x, u, t) + \frac{\partial V}{\partial x}\left(x, t\right)f\left(x, u, t\right)    
+                    \end{align*}
+                \end{minipage}
+            };
+        \end{tikzpicture}
+
     \end{frame}
 
     \begin{frame}{HJB方程式}

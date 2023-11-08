@@ -14,6 +14,7 @@
 \usepackage{forest}
 \usepackage{ascmac}
 \usepackage{fancybox}
+\usepackage{eclbkbox}
 \usetikzlibrary{arrows.meta}
 \usetikzlibrary{positioning}
 \usetikzlibrary{decorations.pathreplacing,calligraphy}
@@ -41,7 +42,7 @@
 
     \begin{frame}{現在位置}
         \begin{columns}
-            \begin{column}{.5\textwidth}
+            \begin{column}{.4\textwidth}
                 \begin{itemize}
                     \item \colorbox{yellow}{復習}
                     \item 動的計画法
@@ -51,7 +52,7 @@
                 \end{itemize}
             \end{column}
     
-            \begin{column}{.5\textwidth}
+            \begin{column}{.6\textwidth}
                 今までの内容覚えてますか？\\
                 復習しましょう!!
             \end{column}
@@ -59,6 +60,22 @@
     \end{frame}
 
     \begin{frame}{最適制御とは}
+        \begin{screen}
+            状態方程式 \quad $\dot{x}(t) = f(x(t), u(t), t)$ \\
+            評価関数 \qquad $J =$ 
+            \tikz[remember picture, baseline=(T1.base)]{
+                \node [fill=orange!20!white, inner sep=0pt, outer sep=0, minimum height=4ex] (T1) {$\varphi(x(t_f))$};
+            }
+            $+$
+            \tikz[remember picture, baseline=(T2.base)]{
+                \node [fill=red!20!white, inner sep=0pt, outer sep=0, minimum height=4ex] (T2) {$\int_{t_0}^{t_f} L(x(t), u(t), t) \, dt$}
+            }
+             
+            \begin{tikzpicture}[remember picture, overlay]
+              \node [below=0pt of T1, text=orange!80!black] {終端コスト};
+              \node [below=0pt of T2, text=red!80!black] {ステージコスト};
+            \end{tikzpicture}
+        \end{screen}
         \centering{
             \begin{tikzpicture}
                 \draw[->, >=stealth, semithick](-0.5, 0)--(7.5, 0)node[right]{$t$};
@@ -81,23 +98,6 @@
         }
 
         \footnotesize
-        \begin{tcolorbox}[title=最適制御]
-            状態方程式 \quad $\dot{x}(t) = f(x(t), u(t), t)$ \\
-            評価関数 \qquad $J =$ 
-            \tikz[remember picture, baseline=(T1.base)]{
-                \node [fill=orange!20!white, inner sep=0pt, outer sep=0, minimum height=4ex] (T1) {$\varphi(x(t_f))$};
-            }
-            $+$
-            \tikz[remember picture, baseline=(T2.base)]{
-                \node [fill=red!20!white, inner sep=0pt, outer sep=0, minimum height=4ex] (T2) {$\int_{t_0}^{t_f} L(x(t), u(t), t) \, dt$}
-            }
-             
-            \begin{tikzpicture}[remember picture, overlay]
-              \node [below=0pt of T1, text=orange!80!black] {終端コスト};
-              \node [below=0pt of T2, text=red!80!black] {ステージコスト};
-            \end{tikzpicture}
-
-        \end{tcolorbox}
     
     \end{frame}
 
@@ -135,6 +135,15 @@
         制約を含んだ場合 \\
     \end{frame}
 
+    \begin{frame}{第1回、第2回まとめ}
+        \begin{itembox}[l]{第1回}
+            最適制御問題を予め、時間的に離散化することによって最適化問題に落とし込んだ
+        \end{itembox}
+        \begin{itembox}[l]{第2回}
+            変分法を利用して2点境界値問題の最適性条件を導いた
+        \end{itembox}
+    \end{frame}
+
     \begin{frame}{最適性条件まとめ}
         \fontsize{6.5pt}{6.5pt}\selectfont
         
@@ -169,9 +178,23 @@
                     \begin{align*}
                         \frac{\partial L}{\partial x} - \frac{d}{dt} \left( \frac{\partial L}{\partial \dot{x}} \right) = 0
                     \end{align*}
-                    \begin{tikzpicture}
-                        \draw[<-](0, 0)node[below]{HJB方程式}--(0,1)node[above]{Bellman方程式};
-                    \end{tikzpicture}
+                    \begin{columns}
+                        \begin{column}{.5\textwidth}
+                            \begin{center}
+                                \begin{itembox}[l]{動的計画法}
+                                    \begin{tikzpicture}
+                                        \draw[->](0, 0)node[above]{Bellman方程式}--(0, -1)node[below]{HJB方程式};
+                                    \end{tikzpicture}
+                                \end{itembox}
+                            \end{center}
+                        \end{column}
+                        \begin{column}{.5\textwidth}
+                            \begin{tikzpicture}
+                                \draw(0, 0)node{最小原理}circle[radius=1];
+                            \end{tikzpicture}
+                        \end{column}
+                    \end{columns}
+                    
                 \end{itembox}
             \end{column}
         \end{columns}
@@ -389,21 +412,34 @@
 
     \begin{frame}{現在位置}
         \footnotesize
-        \begin{itemize}
-            \item 復習
-            \item 動的計画法
-            \item \colorbox{yellow}{HJB方程式}
-            \item 最小原理
-            \item MPC導入
-        \end{itemize}
-        \begin{itembox}[l]{Bellman方程式からHJB方程式への変形}
-            \begin{align*}
-                V(x, t) &= \min_u \left( L(x, u, t) dt + V \left( x + f(x, u, t) dt, t + dt \right) \right)        
-            \end{align*}
-            \begin{align*}
-                -\frac{\partial V}{\partial t}\left(x,t\right) = \min _u H\left(x, u, \left( \frac{\partial V}{\partial x} \right)^T\left(x, t\right), t \right)
-            \end{align*}
-        \end{itembox}
+        \begin{columns}
+            \begin{column}{.35\textwidth}
+                \begin{itemize}
+                    \item 復習
+                    \item 動的計画法
+                    \item \colorbox{yellow}{HJB方程式}
+                    \item 最小原理
+                    \item MPC導入
+                \end{itemize}
+            \end{column}
+    
+            \begin{column}{.7\textwidth}
+               
+                \begin{screen}
+                    
+                    {\fontsize{7.5pt}{6pt}\selectfont
+                    \begin{center}
+                        \begin{tikzpicture}
+                            \draw[->](0, 0)node[above]{$V(x, t) = \min_u \left( L(x, u, t) dt + V \left( x + f(x, u, t) dt, t + dt \right) \right)$}--(0, -0.5)node[below]{$-\frac{\partial V}{\partial t}\left(x,t\right) = \min _u H\left(x, u, \left( \frac{\partial V}{\partial x} \right)^T\left(x, t\right), t \right)$};
+                        \end{tikzpicture}
+                    \end{center}
+                    }
+                \end{screen}
+                方針:\\
+                微分の形にしたい$\rightarrow$ Taylor展開\\
+                Hamiltonianでまとめられそう\\
+            \end{column}
+        \end{columns}
     \end{frame}
 
     \begin{frame}{HJB方程式}

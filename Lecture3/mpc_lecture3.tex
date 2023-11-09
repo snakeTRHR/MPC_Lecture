@@ -1,4 +1,4 @@
-\documentclass[dvipdfmx,12pt]{beamer}
+\documentclass[twocolumn, dvipdfmx,12pt]{beamer}
 \usepackage{bxdpx-beamer}
 \usepackage{pxjahyper}
 \usepackage{tikz}
@@ -15,7 +15,7 @@
 \usepackage{ascmac}
 \usepackage{fancybox}
 \usepackage{eclbkbox}
-\usepackage{multicols}
+\usepackage{multicol}
 \usetikzlibrary{arrows.meta}
 \usetikzlibrary{positioning}
 \usetikzlibrary{decorations.pathreplacing,calligraphy}
@@ -107,7 +107,11 @@
 
     \begin{frame}{変分法1}
         \footnotesize
-
+        \begin{screen}
+            \begin{equation*}
+                J =\varphi(x(t_f))+\int_{t_0}^{t_f} L(x(t), u(t), t) \, dt
+            \end{equation*}
+        \end{screen}
         \begin{tikzpicture}        
             \draw[->,>=stealth,semithick](-0.5,0)--(3.5,0)node[above]{$x$};
             \draw[->,>=stealth,semithick](0,-0.5)--(0,3.5)node[right]{$y$};
@@ -131,54 +135,49 @@
             \fill[white](5.5, -1)node[black, right]{汎関数(関数の関数)の勾配}circle(0.1);
 
         \end{tikzpicture}
+
+        \vspace{-0.8em}
+
+        \begin{center}
+            \colorbox{yellow}{評価関数$J$は関数$x(t)$,$u(t)$の関数なので汎関数とみなせる}
+        \end{center}
+
     \end{frame}
 
     \begin{frame}{変分法2}
-        \begin{screen}
-            \begin{center}
-                評価関数 \quad $J =\varphi(x(t_f))+\int_{t_0}^{t_f} L(x(t), u(t), t) \, dt$
-            \end{center}
-        \end{screen}
-        \colorbox{yellow}{評価関数$J$は関数$x(t)$,$u(t)$の関数なので汎関数}\\
-        二点境界値問題の解を用いることによって\\
-        初期値条件:$x(t_0)=x_0$ \\
-        終端条件:$\lambda(t_f)=\left(\frac{\partial \varphi}{\partial x}\right)^\top$ \\
-        随伴方程式:$\frac{d\lambda}{dt}=-\left(\frac{\partial H}{\partial x}\right)^\top$\\
-        状態方程式:$\frac{dx}{dt}=f(x,u,t)=\left(\frac{\partial H}{\partial \lambda}\right)^\top$ \\
-        最適制御入力条件:$\frac{\partial H}{\partial u}=0$ \\
-    \end{frame}
-    \begin{frame}{変分法}
-        \scriptsize
+        \fontsize{7.8pt}{7.8pt}\selectfont
 
-        \begin{columns}
-            \begin{column}{.4\textwidth}
-                \begin{tcolorbox}[title=微分法]
-                    \colorbox{yellow}{関数}の勾配を考える\\
-                    停留するとある関数の最大or最小 \\
-                    \colorbox{yellow}{点}の変動を考える\\
-                \end{tcolorbox}
-            \end{column}
-            \begin{column}{.2\textwidth}
-                \tikz{
-                    \draw [line width = 1pt, double distance = 3pt, arrows = {-Stealth[length = 10mm, open]}](0, 0) -- (2, 0)
-                }                
-            \end{column}
-            \begin{column}{.4\textwidth}
-                \begin{tcolorbox}[title=変分法]
-                    \colorbox{yellow}{汎関数(関数の関数)}の勾配を考える\\
-                    停留するとある関数の全体を最大or最小\\ 
-                    \colorbox{yellow}{関数}の変動を考える\\
-                \end{tcolorbox}
-            \end{column}
-        \end{columns}
 
-        微分法ではある曲線を最小化(最大化)することを考えていたけど、変分法ではある評価関数に基づいて関数全体を最小化(最大化)する関数を求める \\
-        
-        偏微分と似た考え方をする \\
+        \begin{multicols}{2}
+            \colorbox{yellow}{評価関数$J$のみの停留条件}\\
+                \begin{equation*}
+                    J =\varphi(x(t_f))+\int_{t_0}^{t_f} L(x(t), \dot{x(t)}, t) \, dt
+                \end{equation*}
 
-        二点境界値問題の解 \\
-        Euler-Lagrange方程式を満たす \\
-        制約を含んだ場合 \\
+                \begin{align*}
+                    \frac{\partial L}{\partial x} - \frac{d}{dt} \left( \frac{\partial L}{\partial \dot{x}} \right) = 0
+                \end{align*}
+
+                この等式が成立するのは始点と終点を初期値として与えられた場合である(2点境界値問題).
+            \columnbreak
+
+            \colorbox{yellow}{評価関数Jと状態方程式を考慮した停留条件}\\
+            \begin{equation*}
+                J =\varphi(x(t_f))+\int_{t_0}^{t_f} L(x(t), u(t), t) \, dt
+            \end{equation*}
+
+            \begin{align*}
+                \begin{cases}
+                    &x(t_0)=x_0 \\
+                    &\lambda(t_f)=\left(\frac{\partial \varphi}{\partial x}\right)^\top \\
+                    &\frac{d\lambda}{dt}=-\left(\frac{\partial H}{\partial x}\right)^\top\\
+                    &\frac{dx}{dt}=f(x,u,t)=\left(\frac{\partial H}{\partial \lambda}\right)^\top \\
+                    &\frac{\partial H}{\partial u}=0 \\
+                \end{cases}
+            \end{align*}
+                このとき$H=L+\lambda ^\top f + \rho ^\top C$と拡張すれば入力制約も考慮できる
+        \end{multicols}
+                 
     \end{frame}
 
     \begin{frame}{第1回、第2回まとめ}
@@ -531,14 +530,32 @@
             \end{column}
     
             \begin{column}{.7\textwidth}
-                別の観点から最適制御を考える \\
+                \begin{screen}
+                    \begin{align*}
+                        \begin{cases}
+                            &x(t_0)=x_0 \\
+                            &\lambda(t_f)=\nabla_x \varphi(t_f, x(t_f)) \\
+                            &\frac{d\lambda}{dt}=-\nabla_x H(x, \lambda, u, t)\\
+                            &\frac{dx}{dt}=f(x,u,t)=\nabla_\lambda H(x, \lambda, u, t) \\
+                            &\nabla_u H(x, \lambda, u, t)=0 \\
+                        \end{cases}  
+                    \end{align*}
+                \end{screen}
             \end{column}
         \end{columns}
     \end{frame}
 
     \begin{frame}{最小原理1}
         \footnotesize
-
+        \begin{align*}
+            \begin{cases}
+                &x(t_0)=x_0 \\
+                &\lambda(t_f)=\nabla_x \varphi(t_f, x(t_f)) \\
+                &\frac{d\lambda}{dt}=-\nabla_x H(x, \lambda, u, t)\\
+                &\frac{dx}{dt}=f(x,u,t)=\nabla_\lambda H(x, \lambda, u, t) \\
+                &\nabla_u H(x, \lambda, u, t)=0 \\
+            \end{cases}  
+        \end{align*}
     \end{frame}
 
     \begin{frame}{最小原理2}
@@ -547,18 +564,95 @@
 
     \end{frame}
 
-    \begin{frame}{最適性条件まとめ}
-        \footnotesize
-        ラグランジュの未定乗数法\\
-        KKT条件\\
-        オイラーラグランジュ方程式\\
-        動的計画法(new)\\
-        HJB方程式(new)\\
-        最小原理(new)\\
-        動的計画法からHJB方程式を導いたが、最小原理からも導ける\\
+    \begin{frame}{連続時間最適化のポイント}
+        \tiny
+        \colorbox{yellow}{Euler-Lagrange方程式} \\
+        \qquad 評価関数を汎関数と考え,ステージコスト$L$に状態方程式を満たす制約を含め評価関数を拡張し,
+        変分法を用いたときの停留条件
+        \begin{align*}
+            \begin{cases}
+                &x(t_0)=x_0 \\
+                &\lambda(t_f)=\left(\frac{\partial \varphi}{\partial x}\right)^\top \\
+                &\frac{d\lambda}{dt}=-\left(\frac{\partial H}{\partial x}\right)^\top\\
+                &\frac{dx}{dt}=f(x,u,t)=\left(\frac{\partial H}{\partial \lambda}\right)^\top \\
+                &\frac{\partial H}{\partial u}=0 \\
+            \end{cases}
+        \end{align*}
 
-        ここに各関係の図を貼る
+        \colorbox{yellow}{HJB方程式} \\
+        \qquad 動的計画法によって問題を部分問題に分割した
+        \begin{equation*}
+            -\frac{\partial V}{\partial t}\left(x,t\right) = \min _u H\left(x, u, \left( \frac{\partial V}{\partial x} \right)^T\left(x, t\right), t \right)
+        \end{equation*}
+
+        \colorbox{yellow}{Pontryaginの最小原理} \\
+        \begin{align*}
+            \begin{cases}
+                &x(t_0)=x_0 \\
+                &\lambda(t_f)=\nabla_x \varphi(t_f, x(t_f)) \\
+                &\frac{d\lambda}{dt}=-\nabla_x H(x, \lambda, u, t)\\
+                &\frac{dx}{dt}=f(x,u,t)=\nabla_\lambda H(x, \lambda, u, t) \\
+                &\nabla_u H(x, \lambda, u, t)=0 \\
+            \end{cases}  
+        \end{align*}
     \end{frame}
+
+    \begin{frame}{最適性条件まとめ}
+        \fontsize{6.5pt}{6.5pt}\selectfont
+        
+        \begin{columns}
+            \begin{column}{.6\textwidth}
+                \begin{itembox}[l]{時間を考慮しない}
+                    \begin{itembox}[l]{線形MPC}
+                        予め時間を考慮して出した式から出た最適化問題を解いたから
+                        最適化問題自体は時間を考慮不要\\
+                    \end{itembox}
+                    \colorbox{yellow}{Lagrangeの未定乗数法}\\
+                    \begin{align*}
+                        L(x, \lambda) = f(x) + \lambda^T g(x)
+                    \end{align*}
+                    \colorbox{yellow}{KKT条件}\\
+                    \begin{align*}
+                        \nabla f(x^*) &+ \sum_{i=1}^m \lambda_i^* \nabla g_i(x^*) + \sum_{j=1}^n \mu_j^* \nabla h_j(x^*) = 0 \\
+                        g_i(x^*) &\leq 0 \quad \text{for all } i \\
+                        \lambda_i^* &\geq 0 \quad \text{for all } i \\
+                        \lambda_i^* g_i(x^*) &= 0 \quad \text{for all } i \\
+                        h_j(x^*) &= 0 \quad \text{for all } j
+                    \end{align*}
+                \end{itembox}
+            \end{column}
+
+            \begin{column}{.55\textwidth}
+                \begin{itembox}[l]{時間を考慮}
+                    \begin{itembox}[l]{非線形MPC}
+                        時間で離散化せずに直接最適化問題を解きたい
+                    \end{itembox}
+                    \colorbox{yellow}{Euler-Lagrange方程式}\\
+                    \begin{align*}
+                        \frac{\partial L}{\partial x} - \frac{d}{dt} \left( \frac{\partial L}{\partial \dot{x}} \right) = 0
+                    \end{align*}
+                    \begin{columns}
+                        \begin{column}{.5\textwidth}
+                            \begin{center}
+                                \begin{itembox}[l]{動的計画法}
+                                    \begin{tikzpicture}
+                                        \draw[->](0, 0)node[above]{Bellman方程式}--(0, -1)node[below]{HJB方程式};
+                                    \end{tikzpicture}
+                                \end{itembox}
+                            \end{center}
+                        \end{column}
+                        \begin{column}{.5\textwidth}
+                            \begin{tikzpicture}
+                                \draw(0, 0)node{最小原理}circle[radius=1];
+                            \end{tikzpicture}
+                        \end{column}
+                    \end{columns}
+                    
+                \end{itembox}
+            \end{column}
+        \end{columns}
+    \end{frame}
+
     \begin{frame}{現在位置}
         \footnotesize
         \begin{enumerate}

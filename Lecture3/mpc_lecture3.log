@@ -1,4 +1,4 @@
-This is e-pTeX, Version 3.141592653-p3.9.1-210218-2.6 (utf8.euc) (TeX Live 2022/dev/Debian) (preloaded format=platex 2023.9.25)  9 NOV 2023 12:46
+This is e-pTeX, Version 3.141592653-p3.9.1-210218-2.6 (utf8.euc) (TeX Live 2022/dev/Debian) (preloaded format=platex 2023.9.25)  9 NOV 2023 22:37
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -999,18 +999,21 @@ Style option: `fancybox' v1.4 <2010/05/15> (tvz)
 \bk@bxb=\box142
 \bk@bxa=\box143
 \bk@lcnt=\count380
-) (./multicols.sty
-Style option: `multicol' v1.4m <92/09/04> (FMi)
-English documentation          <92/09/04> (FMi)
+) (/usr/share/texlive/texmf-dist/tex/latex/tools/multicol.sty
+Package: multicol 2021/10/28 v1.9b multicolumn formatting (FMi)
+\c@tracingmulticols=\count381
+
+
+Package multicol Warning: May not work with the twocolumn option on input line 
+142.
+
 \mult@box=\box144
 \multicol@leftmargin=\dimen326
-\c@unbalance=\count381
-\c@collectmore=\count382
-\c@tracingmulticols=\count383
-\col@number=\count384
-\doublecol@number=\count385
-\multicoltolerance=\count386
-\multicolpretolerance=\count387
+\c@unbalance=\count382
+\c@collectmore=\count383
+\doublecol@number=\count384
+\multicoltolerance=\count385
+\multicolpretolerance=\count386
 \full@width=\dimen327
 \page@free=\dimen328
 \premulticols=\dimen329
@@ -1019,14 +1022,64 @@ English documentation          <92/09/04> (FMi)
 \multicolbaselineskip=\skip65
 \partial@page=\box145
 \last@line=\box146
+\maxbalancingoverflow=\dimen331
+\mult@rightbox=\box147
+\mult@grightbox=\box148
+\mult@firstbox=\box149
+\mult@gfirstbox=\box150
+\@tempa=\box151
+\@tempa=\box152
+\@tempa=\box153
+\@tempa=\box154
+\@tempa=\box155
+\@tempa=\box156
+\@tempa=\box157
+\@tempa=\box158
+\@tempa=\box159
+\@tempa=\box160
+\@tempa=\box161
+\@tempa=\box162
+\@tempa=\box163
+\@tempa=\box164
+\@tempa=\box165
+\@tempa=\box166
+\@tempa=\box167
+\@tempa=\box168
+\@tempa=\box169
+\@tempa=\box170
+\@tempa=\box171
+\@tempa=\box172
+\@tempa=\box173
+\@tempa=\box174
+\@tempa=\box175
+\@tempa=\box176
+\@tempa=\box177
+\@tempa=\box178
+\@tempa=\box179
+\@tempa=\box180
+\@tempa=\box181
+\@tempa=\box182
+\@tempa=\box183
+\@tempa=\box184
+\@tempa=\box185
+\@tempa=\box186
+\c@minrows=\count387
+\c@columnbadness=\count388
+\c@finalcolumnbadness=\count389
+\last@try=\dimen332
+\multicolovershoot=\dimen333
+\multicolundershoot=\dimen334
+\mult@nat@firstbox=\box187
+\colbreak@box=\box188
+\mc@col@check@num=\count390
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.meta.
 code.tex
 File: pgflibraryarrows.meta.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-\pgfarrowinset=\dimen331
-\pgfarrowlength=\dimen332
-\pgfarrowwidth=\dimen333
-\pgfarrowlinewidth=\dimen334
+\pgfarrowinset=\dimen335
+\pgfarrowlength=\dimen336
+\pgfarrowwidth=\dimen337
+\pgfarrowlinewidth=\dimen338
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
 zlibrarypositioning.code.tex
@@ -1038,45 +1091,45 @@ zlibrarydecorations.pathreplacing.code.tex
 zlibrarydecorations.code.tex
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmoduledecorations.cod
 e.tex
-\pgfdecoratedcompleteddistance=\dimen335
-\pgfdecoratedremainingdistance=\dimen336
-\pgfdecoratedinputsegmentcompleteddistance=\dimen337
-\pgfdecoratedinputsegmentremainingdistance=\dimen338
-\pgf@decorate@distancetomove=\dimen339
-\pgf@decorate@repeatstate=\count388
-\pgfdecorationsegmentamplitude=\dimen340
-\pgfdecorationsegmentlength=\dimen341
+\pgfdecoratedcompleteddistance=\dimen339
+\pgfdecoratedremainingdistance=\dimen340
+\pgfdecoratedinputsegmentcompleteddistance=\dimen341
+\pgfdecoratedinputsegmentremainingdistance=\dimen342
+\pgf@decorate@distancetomove=\dimen343
+\pgf@decorate@repeatstate=\count391
+\pgfdecorationsegmentamplitude=\dimen344
+\pgfdecorationsegmentlength=\dimen345
 )
-\tikz@lib@dec@box=\box147
+\tikz@lib@dec@box=\box189
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/decorations/pgflibrary
 decorations.pathreplacing.code.tex))
 (/usr/share/texlive/texmf-dist/tex/latex/spath3/tikzlibrarycalligraphy.code.tex
 (/usr/share/texlive/texmf-dist/tex/latex/spath3/spath3.sty
 Package: spath3 2021/02/21 v2.4 Functions for manipulating PGF soft paths
-\g__spath_output_int=\count389
-\l__spath_tmpa_dim=\dimen342
-\l__spath_tmpb_dim=\dimen343
-\l__spath_tmpa_int=\count390
-\l__spath_tmpb_int=\count391
-\l__spath_move_x_dim=\dimen344
-\l__spath_move_y_dim=\dimen345
-\g__spath_anon_int=\count392
+\g__spath_output_int=\count392
+\l__spath_tmpa_dim=\dimen346
+\l__spath_tmpb_dim=\dimen347
+\l__spath_tmpa_int=\count393
+\l__spath_tmpb_int=\count394
+\l__spath_move_x_dim=\dimen348
+\l__spath_move_y_dim=\dimen349
+\g__spath_anon_int=\count395
 )
-\l__cal_tmpa_int=\count393
-\l__cal_tmpb_int=\count394
-\g__cal_path_component_int=\count395
-\g__cal_label_int=\count396
-\l__cal_tmpa_dim=\dimen346
-\l__cal_tmpb_dim=\dimen347
-\l__cal_tmpc_dim=\dimen348
-\l__cal_tmpd_dim=\dimen349
-\l__cal_tmpe_dim=\dimen350
-\l__cal_tmpf_dim=\dimen351
-\l__cal_tmpg_dim=\dimen352
-\l__cal_tmph_dim=\dimen353
-\l__cal_taper_width_dim=\dimen354
-\l__cal_line_width_dim=\dimen355
+\l__cal_tmpa_int=\count396
+\l__cal_tmpb_int=\count397
+\g__cal_path_component_int=\count398
+\g__cal_label_int=\count399
+\l__cal_tmpa_dim=\dimen350
+\l__cal_tmpb_dim=\dimen351
+\l__cal_tmpc_dim=\dimen352
+\l__cal_tmpd_dim=\dimen353
+\l__cal_tmpe_dim=\dimen354
+\l__cal_tmpf_dim=\dimen355
+\l__cal_tmpg_dim=\dimen356
+\l__cal_tmph_dim=\dimen357
+\l__cal_taper_width_dim=\dimen358
+\l__cal_line_width_dim=\dimen359
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
 zlibrarypatterns.code.tex
@@ -1095,15 +1148,15 @@ emetropolis.sty
 Package: beamerinnerthememetropolis 2017/01/23 Metropolis inner theme
  (/usr/share/texlive/texmf-dist/tex/latex/tools/calc.sty
 Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
-\calc@Acount=\count397
-\calc@Bcount=\count398
-\calc@Adimen=\dimen356
-\calc@Bdimen=\dimen357
+\calc@Acount=\count400
+\calc@Bcount=\count401
+\calc@Adimen=\dimen360
+\calc@Bdimen=\dimen361
 \calc@Askip=\skip66
 \calc@Bskip=\skip67
 LaTeX Info: Redefining \setlength on input line 80.
 LaTeX Info: Redefining \addtolength on input line 81.
-\calc@Ccount=\count399
+\calc@Ccount=\count402
 \calc@Cskip=\skip68
 )
 \metropolis@titleseparator@linewidth=\skip69
@@ -1139,17 +1192,17 @@ aTeX to use the Fira fonts on input line 95.
 
 )) (./uline--.sty
 Package: uline-- 2007/07/09 v.2.3.4 ``simple'' underlines
-\@uline@pattern@i=\box148
-\@uline@pattern@ii=\box149
-\@uline@pattern@iii=\box150
-\@uline@pattern@iv=\box151
-\@uline@pattern@v=\box152
-\@uline@pattern@id=\count400
+\@uline@pattern@i=\box190
+\@uline@pattern@ii=\box191
+\@uline@pattern@iii=\box192
+\@uline@pattern@iv=\box193
+\@uline@pattern@v=\box194
+\@uline@pattern@id=\count403
 \@uline@tempskip=\skip78
-\@uline@lastpenalty=\count401
-\@uline@g@tempbox=\box153
-\@uline@charcode=\count402
-\@uline@common@command@argcnt=\count403
+\@uline@lastpenalty=\count404
+\@uline@g@tempbox=\box195
+\@uline@charcode=\count405
+\@uline@common@command@argcnt=\count406
 ) (./mpc_lecture3.aux)
 \openout1 = `mpc_lecture3.aux'.
 
@@ -1219,7 +1272,7 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 (/usr/share/texlive/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count404
+\c@section@level=\count407
 )
 LaTeX Info: Redefining \ref on input line 37.
 LaTeX Info: Redefining \pageref on input line 37.
@@ -1350,160 +1403,200 @@ Overfull \vbox (5.42355pt too high) detected at line 106
 
 [4
 
-] [5
+]
+Overfull \vbox (27.98889pt too high) detected at line 145
+ []
 
-] [6
+[5
+
+]
+LaTeX Font Info:    Calculating math sizes for size <7.8> on input line 181.
+
+
+LaTeX Font Warning: Font shape `OT1/cmss/m/n' in size <5.45998> not available
+(Font)              size <5> substituted on input line 181.
+
+
+LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <5.45998> not available
+(Font)              size <5> substituted on input line 181.
+
+
+LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <3.9> not available
+(Font)              size <5> substituted on input line 181.
+
+
+LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <5.45998> not available
+(Font)              size <5> substituted on input line 181.
+
+
+LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <3.9> not available
+(Font)              size <5> substituted on input line 181.
+
+
+Overfull \hbox (25.11995pt too wide) in paragraph at lines 181--181
+[][][][][][][]  
+ []
+
+[6
 
 ] [7
-
-] [8
 
 ]
 
 LaTeX Font Warning: Font shape `OT1/cmss/m/n' in size <6.5> not available
-(Font)              size <6> substituted on input line 247.
+(Font)              size <6> substituted on input line 246.
 
-LaTeX Font Info:    Calculating math sizes for size <6.5> on input line 247.
+LaTeX Font Info:    Calculating math sizes for size <6.5> on input line 246.
 
 LaTeX Font Warning: Font shape `OT1/cmss/m/n' in size <4.54997> not available
-(Font)              size <5> substituted on input line 247.
+(Font)              size <5> substituted on input line 246.
 
 
 LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <6.5> not available
-(Font)              size <6> substituted on input line 247.
+(Font)              size <6> substituted on input line 246.
 
 
 LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <4.54997> not available
-(Font)              size <5> substituted on input line 247.
+(Font)              size <5> substituted on input line 246.
 
 
 LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <3.25> not available
-(Font)              size <5> substituted on input line 247.
+(Font)              size <5> substituted on input line 246.
 
 
 LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <6.5> not available
-(Font)              size <6> substituted on input line 247.
+(Font)              size <6> substituted on input line 246.
 
 
 LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <4.54997> not available
-(Font)              size <5> substituted on input line 247.
+(Font)              size <5> substituted on input line 246.
 
 
 LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <3.25> not available
-(Font)              size <5> substituted on input line 247.
+(Font)              size <5> substituted on input line 246.
 
 
-Overfull \vbox (13.05353pt too high) detected at line 247
+Overfull \vbox (13.05353pt too high) detected at line 246
  []
 
-[9
+[8
 
 ]
 File: Bellman.png Graphic file (type bmp)
 <Bellman.png>
 File: Pontryagin.png Graphic file (type bmp)
 <Pontryagin.png>
- [10
+ [9
 
 ]
 
 LaTeX Font Warning: Font shape `OT1/cmss/m/n' in size <7.5> not available
-(Font)              size <7> substituted on input line 319.
+(Font)              size <7> substituted on input line 318.
 
-LaTeX Font Info:    Calculating math sizes for size <7.5> on input line 319.
+LaTeX Font Info:    Calculating math sizes for size <7.5> on input line 318.
 
 LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <7.5> not available
-(Font)              size <7> substituted on input line 319.
+(Font)              size <7> substituted on input line 318.
 
 
 LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <3.75> not available
-(Font)              size <5> substituted on input line 319.
+(Font)              size <5> substituted on input line 318.
 
 
 LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <7.5> not available
-(Font)              size <7> substituted on input line 319.
+(Font)              size <7> substituted on input line 318.
 
 
 LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <3.75> not available
-(Font)              size <5> substituted on input line 319.
+(Font)              size <5> substituted on input line 318.
 
 
-Overfull \hbox (4.23384pt too wide) detected at line 319
+Overfull \hbox (4.23384pt too wide) detected at line 318
 \OT1/mathkerncmss/m/sl/7.5 V\OT1/cmss/m/n/7 (\OT1/mathkerncmss/m/sl/7.5 x\OML/c
 mm/m/it/7 ; \OT1/mathkerncmss/m/sl/7.5 t\OT1/cmss/m/n/7 ) = [] []
  []
 
-[11
+[10
 
-] [12
+] [11
 
 ]
-Overfull \vbox (27.72346pt too high) detected at line 407
+Overfull \vbox (27.72346pt too high) detected at line 406
+ []
+
+[12
+
+]
+LaTeX Font Info:    Font shape `JT1/gt/bx/n' in size <12> not available
+(Font)              Font shape `JT1/gt/m/n' tried instead on input line 427.
+LaTeX Font Info:    Font shape `JY1/gt/bx/n' in size <12> not available
+(Font)              Font shape `JY1/gt/m/n' tried instead on input line 427.
+
+Overfull \hbox (23.17183pt too wide) detected at line 427
+[]
  []
 
 [13
 
 ]
-LaTeX Font Info:    Font shape `JT1/gt/bx/n' in size <12> not available
-(Font)              Font shape `JT1/gt/m/n' tried instead on input line 428.
-LaTeX Font Info:    Font shape `JY1/gt/bx/n' in size <12> not available
-(Font)              Font shape `JY1/gt/m/n' tried instead on input line 428.
-
-Overfull \hbox (23.17183pt too wide) detected at line 428
-[]
+Overfull \vbox (12.05681pt too high) detected at line 442
  []
 
 [14
 
 ]
-Overfull \vbox (12.05681pt too high) detected at line 443
- []
-
-[15
-
-]
 LaTeX Font Info:    Trying to load font information for TS1+cmss on input line 
-461.
+460.
  (/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmss.fd
 File: ts1cmss.fd 2019/12/16 v2.5j Standard LaTeX font definitions
-) [16
+) [15
 
 ]
-Overfull \hbox (1.65948pt too wide) in paragraph at lines 493--493
+Overfull \hbox (1.65948pt too wide) in paragraph at lines 492--492
  [] 
  []
 
-[17
+[16
 
 ]
-LaTeX Font Info:    Calculating math sizes for size <8.8> on input line 518.
+LaTeX Font Info:    Calculating math sizes for size <8.8> on input line 517.
 
 
 LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <4.4> not available
-(Font)              size <5> substituted on input line 518.
+(Font)              size <5> substituted on input line 517.
 
 
 LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <4.4> not available
-(Font)              size <5> substituted on input line 518.
+(Font)              size <5> substituted on input line 517.
 
 
-Overfull \hbox (31.81729pt too wide) in paragraph at lines 518--518
+Overfull \hbox (31.81729pt too wide) in paragraph at lines 517--517
 [][]  
  []
 
 
-Overfull \vbox (21.7984pt too high) detected at line 518
+Overfull \vbox (21.7984pt too high) detected at line 517
  []
 
-[18
+[17
+
+] [18
 
 ] [19
 
 ] [20
 
-] [21
+]
+Overfull \vbox (19.42159pt too high) detected at line 598
+ []
 
-] [22
+[21
+
+]
+Overfull \vbox (13.05353pt too high) detected at line 654
+ []
+
+[22
 
 ] [23
 
@@ -1530,12 +1623,12 @@ Package rerunfilecheck Info: File `mpc_lecture3.out' has not changed.
 (rerunfilecheck)             Checksum: 05B9FF7757FE6A446D8F294B02146D28;54.
  ) 
 Here is how much of TeX's memory you used:
- 41710 strings out of 478741
- 952374 string characters out of 5860982
- 1226537 words of memory out of 5000000
- 59436 multiletter control sequences out of 15000+600000
- 535601 words of font info for 157 fonts, out of 8000000 for 9000
+ 41795 strings out of 478741
+ 953626 string characters out of 5860982
+ 1229774 words of memory out of 5000000
+ 59521 multiletter control sequences out of 15000+600000
+ 539181 words of font info for 171 fonts, out of 8000000 for 9000
  929 hyphenation exceptions out of 8191
- 128i,17n,122p,1811b,1481s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 128i,20n,122p,1811b,1481s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on mpc_lecture3.dvi (25 pages, 150260 bytes).
+Output written on mpc_lecture3.dvi (25 pages, 156564 bytes).

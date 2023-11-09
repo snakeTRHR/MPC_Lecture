@@ -108,9 +108,9 @@
     \begin{frame}{変分法1}
         \footnotesize
         \begin{screen}
-            \begin{equation*}
-                J =\varphi(x(t_f))+\int_{t_0}^{t_f} L(x(t), u(t), t) \, dt
-            \end{equation*}
+            \begin{center}
+                評価関数 \quad $J =\varphi(x(t_f))+\int_{t_0}^{t_f} L(x(t), u(t), t) \, dt$
+            \end{center}
         \end{screen}
         \begin{tikzpicture}        
             \draw[->,>=stealth,semithick](-0.5,0)--(3.5,0)node[above]{$x$};
@@ -150,20 +150,27 @@
 
         \begin{multicols}{2}
             \colorbox{yellow}{評価関数$J$のみの停留条件}\\
-                \begin{equation*}
-                    J =\varphi(x(t_f))+\int_{t_0}^{t_f} L(x(t), \dot{x(t)}, t) \, dt
-                \end{equation*}
+                
+            \vspace{1em}
 
-                \begin{align*}
-                    \frac{\partial L}{\partial x} - \frac{d}{dt} \left( \frac{\partial L}{\partial \dot{x}} \right) = 0
-                \end{align*}
+            曲線の形状など入力を必要としない最適化に用いる
 
-                この等式が成立するのは始点と終点を初期値として与えられた場合である(2点境界値問題).
+            \begin{equation*}
+                J =\varphi(x(t_f))+\int_{t_0}^{t_f} L(x(t), \textcolor{red}{\dot{x}(t)}, t) \, dt
+            \end{equation*}
+            \begin{align*}
+                \frac{\partial L}{\partial x} - \frac{d}{dt} \left( \frac{\partial L}{\partial \dot{x}} \right) = 0
+            \end{align*}
+            この等式が成立するのは始点と終点を初期値として与えられた場合である\\
+            (2点境界値問題)\\
+            
             \columnbreak
 
             \colorbox{yellow}{評価関数Jと状態方程式を考慮した停留条件}\\
+            \vspace{1em}
+            最適制御では入力を求めるのでこちらを用いる
             \begin{equation*}
-                J =\varphi(x(t_f))+\int_{t_0}^{t_f} L(x(t), u(t), t) \, dt
+                J =\varphi(x(t_f))+\int_{t_0}^{t_f} L(x(t), \textcolor{red}{u(t)}, t) \, dt
             \end{equation*}
 
             \begin{align*}
@@ -180,6 +187,17 @@
                  
     \end{frame}
 
+    \begin{frame}{変分法3}
+        \fontsize{9.5pt}{9.5pt}\selectfont
+
+        Q.\quad なぜ異なる形のEuler-Lagrange方程式があるの? \\
+        A.\quad 変分問題の停留条件の式の総称がEuler-Lagrange方程式\\
+                \qquad 決まった式の形ではない.\\
+
+        \vspace{1em}
+        Q.\quad 最適制御のEuler-Lagrange方程式は入力制約がある場合は使えないの?\\
+        A.\quad 使える.
+    \end{frame}
     \begin{frame}{第1回、第2回まとめ}
         \begin{itembox}[l]{第1回}
             最適制御問題を予め、時間的に離散化することによって最適化問題に落とし込んだ

@@ -15,11 +15,15 @@
 \usepackage{ascmac}
 \usepackage{fancybox}
 \usepackage{eclbkbox}
+\usepackage{multicols}
 \usetikzlibrary{arrows.meta}
 \usetikzlibrary{positioning}
 \usetikzlibrary{decorations.pathreplacing,calligraphy}
 \usetikzlibrary{patterns}
 \usetheme{metropolis}  
+
+\setlength{\columnsep}{1.5cm}
+\setlength{\columnseprule}{0.2pt}
 
 % blockのスタイルをカスタマイズ
 \setbeamercolor{block title}{bg=blue!30,fg=black} % タイトルの背景色とテキストの色
@@ -43,13 +47,13 @@
     \begin{frame}{現在位置}
         \begin{columns}
             \begin{column}{.4\textwidth}
-                \begin{itemize}
+                \begin{enumerate}
                     \item \colorbox{yellow}{復習}
                     \item 動的計画法
                     \item HJB方程式
                     \item 最小原理
                     \item MPC導入
-                \end{itemize}
+                \end{enumerate}
             \end{column}
     
             \begin{column}{.6\textwidth}
@@ -99,6 +103,28 @@
 
         \footnotesize
     
+    \end{frame}
+
+    \begin{frame}{変分法}
+        \footnotesize
+
+        \begin{tikzpicture}        
+            \draw[->,>=stealth,semithick](-0.5,0)--(3.5,0)node[above]{$x$};
+            \draw[->,>=stealth,semithick](0,-0.5)--(0,3.5)node[right]{$y$};
+            \draw[very thick,domain=-1.7:1.7]plot(\x+1.5,\x*\x+0.5);
+            \fill[red](1.5, 0.5)circle(0.1);
+           
+            \draw[->, red, very thick] (1.3, 0.75) to [out=150, in=-70] (0.75, 1.4);
+            \draw[->, red, very thick] (1.7, 0.75) to [out=30, in=250] (2.25, 1.4);
+
+            \draw[->,>=stealth,semithick](5.5,0)--(9.5,0)node[above]{$x$};
+            \draw[->,>=stealth,semithick](6,-0.5)--(6,3.5)node[right]{$y$};
+
+            \draw[dashed, blue, very thick, domain=-0.5:3.5]plot(\x+6,{0.4*cos(3 * \x r)+0.3*sin(6*\x r)+1.7});
+            \draw[dashed, red, very thick, domain=-0.5:3.5]plot(\x+6,{0.3*cos(3 * \x r)+0.4*sin(6*\x r)+0.3*sin(8*\x r)+1.7});
+            \draw[black, very thick, domain=-0.5:3.5]plot(\x+6,{0.2*cos(3 * \x r)+0.1*sin(6*\x r)+1.7});
+
+        \end{tikzpicture}
     \end{frame}
 
     \begin{frame}{変分法}
@@ -248,13 +274,13 @@
         \footnotesize
         \begin{columns}
             \begin{column}{.35\textwidth}
-                \begin{itemize}
+                \begin{enumerate}
                     \item 復習
                     \item \colorbox{yellow}{動的計画法}
                     \item HJB方程式
                     \item 最小原理
                     \item MPC導入
-                \end{itemize}
+                \end{enumerate}
             \end{column}
     
             \begin{column}{.7\textwidth}
@@ -397,17 +423,20 @@
     \end{frame}
 
     \begin{frame}{動的計画法まとめ}
-        動的計画法は大きな問題を小さな部分問題に分解し、それぞれ解くことで全体の解を得る手法
+        \scriptsize
 
-        \begin{tcolorbox}[title=Bellman方程式]
+        \begin{block}{Bellman方程式}
             \begin{align*}
                 V(x, t) &= \min_{u[t, t+dt]} \left( L(x, u, t) dt + V \left( x + f(x, u, t) dt, t + dt \right) \right)
             \end{align*}
-        \end{tcolorbox}
+        \end{block}
+
+        動的計画法とは $\cdots$ 大きな問題を小さな部分問題に分解し、解を得る手法
 
         \begin{itemize}
-            \item 最適的な性質を持つ
+            \item 最適な性質を持つ
             \item 計算結果を保存して再利用(メモ化)
+            \item 次元の呪いで現実的には解けない場合がある
         \end{itemize}
     \end{frame}
 
@@ -415,13 +444,13 @@
         \footnotesize
         \begin{columns}
             \begin{column}{.35\textwidth}
-                \begin{itemize}
+                \begin{enumerate}
                     \item 復習
                     \item 動的計画法
                     \item \colorbox{yellow}{HJB方程式}
                     \item 最小原理
                     \item MPC導入
-                \end{itemize}
+                \end{enumerate}
             \end{column}
     
             \begin{column}{.7\textwidth}
@@ -444,15 +473,15 @@
     \end{frame}
 
     \begin{frame}{HJB方程式}
-        \fontsize{8.8pt}{6.5pt}\selectfont
+        \fontsize{8.8pt}{8.8pt}\selectfont
 
         \begin{tikzpicture}
-            \draw[->, black, very thick] (-1, 0.0) node[above right]{\colorbox{yellow}{$V(x, t) = \min_{u} \left( L(x, u, t) dt + V \left( x + f(x, u, t) dt, t + dt \right) \right)$}} -- (-1, -2.0) ;
+            \draw[->, black, very thick] (-1, 0.0) node[above right]{\colorbox{yellow}{$V(x, t) = \min _{u} \left( L(x, u, t) dt + V \left( x + f(x, u, t) dt, t + dt \right) \right)$}} -- (-1, -2.0) ;
             
             \fill[white] (-0.5, -0.5) circle (0.1) node[right, black] {$(x, t)$でTaylor展開する};
             \fill[white] (-0.5, -1) circle (0.1) node[right, black]{$V \left( x + f(x, u, t) dt, t + dt \right) \simeq V \left(x, t\right) + \frac{\partial V}{\partial x}\left(x, t\right)f\left(x, u, t\right)dt + \frac{\partial V}{\partial t}\left(x, t\right)dt$};
             
-            \draw[->, black, very thick] (-1, -2.8)node[above right, black]{\colorbox{yellow}{$V(x, t) = \min_{u[t, t+dt]} \left( L(x, u, t) dt + V \left(x, t\right) + \frac{\partial V}{\partial x}\left(x, t\right)f\left(x, u, t\right)dt + \frac{\partial V}{\partial t}\left(x, t\right)dt \right)$}}--(-1, -3.0)node[below right, black]{\colorbox{yellow}{$0 = \min_{u[t, t+dt]} \left( L(x, u, t) + \frac{\partial V}{\partial x}\left(x, t\right)f\left(x, u, t\right) + \frac{\partial V}{\partial t}\left(x, t\right) \right) dt$}};
+            \draw[->, black, very thick] (-1, -2.8)node[above right, black]{\colorbox{yellow}{$V(x, t) = \min _{u[t, t+dt]} \left( L(x, u, t) dt + V \left(x, t\right) + \frac{\partial V}{\partial x}\left(x, t\right)f\left(x, u, t\right)dt + \frac{\partial V}{\partial t}\left(x, t\right)dt \right)$}}--(-1, -3.0)node[below right, black]{\colorbox{yellow}{$0 = \min_{u[t, t+dt]} \left( L(x, u, t) + \frac{\partial V}{\partial x}\left(x, t\right)f\left(x, u, t\right) + \frac{\partial V}{\partial t}\left(x, t\right) \right) dt$}};
             \draw[->, black, very thick] (-1, -3.8)--(-1,-6.3)node[below right]{\colorbox{yellow}{$-\frac{\partial V}{\partial t}\left(x,t\right) = \min _u H\left(x, u, \left( \frac{\partial V}{\partial x} \right)^T\left(x, t\right), t \right)$}};
     
             \fill[white] (-0.5, -5) circle (0.1) node[right, black] {
@@ -468,47 +497,23 @@
 
     \end{frame}
 
-    \begin{frame}{HJB方程式}
-        \fontsize{8.5pt}{6.5pt}\selectfont
-
-        \begin{tikzpicture}
-            \draw[->, black, very thick] (0, 0) node[above right]{\colorbox{yellow}{$V(x, t) = \min_{u} \left( L(x, u, t) dt + V \left( x + f(x, u, t) dt, t + dt \right) \right)$}} -- (0, -6) node[below right]{\colorbox{yellow}{$-\frac{\partial V}{\partial t}\left(x,t\right) = \min _u H\left(x, u, \left( \frac{\partial V}{\partial x} \right)^T\left(x, t\right), t \right)$}};
-            \fill[white] (0.5, -0.5) circle (0.1) node[right, black] {$(x, t)$でTaylor展開する};
-            \fill[white] (0.5, -1) circle (0.1) node[right, black]{$V \left( x + f(x, u, t) dt, t + dt \right) \simeq V \left(x, t\right) + \frac{\partial V}{\partial x}\left(x, t\right)f\left(x, u, t\right)dt + \frac{\partial V}{\partial t}\left(x, t\right)dt$};
-            \fill[white] (0, -2) circle (0.1) node[right, black]{\colorbox{yellow}{$V(x, t) = \min_{u[t, t+dt]} \left( L(x, u, t) dt + V \left(x, t\right) + \frac{\partial V}{\partial x}\left(x, t\right)f\left(x, u, t\right)dt + \frac{\partial V}{\partial t}\left(x, t\right)dt \right)$}};
-            \fill[white] (0, -3) circle (0.1) node[right, black]{\colorbox{yellow}{$0 = \min_{u[t, t+dt]} \left( L(x, u, t) + \frac{\partial V}{\partial x}\left(x, t\right)f\left(x, u, t\right) + \frac{\partial V}{\partial t}\left(x, t\right) \right) dt$}};
-    
-            \fill[white] (0.5, -5) circle (0.1) node[right, black] {
-                \begin{minipage}{\textwidth}
-                    ハミルトニアンでまとめる
-                    \begin{align*}
-                        H(x, u, \lambda, t) &= L(x, u, t) + \lambda^T f(x, u, t) \\
-                        H\left(x, u, \left( \frac{\partial V}{\partial x} \right)^T\left(x, t\right), t \right) &= L(x, u, t) + \frac{\partial V}{\partial x}\left(x, t\right)f\left(x, u, t\right)    
-                    \end{align*}
-                \end{minipage}
-            };
-        \end{tikzpicture}
-
-    \end{frame}
-
     \begin{frame}{現在位置}
         \footnotesize
-        \begin{itemize}
-            \item 復習
-            \item 動的計画法
-            \item HJB方程式
-            \item \colorbox{yellow}{最小原理}
-            \item MPC導入
-        \end{itemize}
-        別の観点から最適制御を考える \\
-        \begin{figure}[H]
-            \includegraphics[clip, width = 2.0cm]{Pontryagin.png}
-        \end{figure}
-        \tiny{
-            \rightline{
-                Pontryagin
-            }
-        }
+        \begin{columns}
+            \begin{column}{.35\textwidth}
+                \begin{enumerate}
+                    \item 復習
+                    \item 動的計画法
+                    \item HJB方程式
+                    \item \colorbox{yellow}{最小原理}
+                    \item MPC導入
+                \end{enumerate}
+            \end{column}
+    
+            \begin{column}{.7\textwidth}
+                別の観点から最適制御を考える \\
+            \end{column}
+        \end{columns}
     \end{frame}
 
     \begin{frame}{最小原理1}
@@ -536,14 +541,15 @@
     \end{frame}
     \begin{frame}{現在位置}
         \footnotesize
-        \begin{itemize}
+        \begin{enumerate}
             \item 復習
             \item 動的計画法
             \item HJB方程式
             \item 最小原理
             \item \colorbox{yellow}{MPC導入}
-        \end{itemize}
+        \end{enumerate}
     \end{frame}
+
 
     \begin{frame}{MPC}
         Euler-Lagrange方程式では入力に状態を含んでいないので、状態が変化(外的要因によって)する現実システムだと扱いにくい \\

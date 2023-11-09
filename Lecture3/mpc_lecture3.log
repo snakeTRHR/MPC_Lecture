@@ -1,4 +1,4 @@
-This is e-pTeX, Version 3.141592653-p3.9.1-210218-2.6 (utf8.euc) (TeX Live 2022/dev/Debian) (preloaded format=platex 2023.9.25)  9 NOV 2023 07:22
+This is e-pTeX, Version 3.141592653-p3.9.1-210218-2.6 (utf8.euc) (TeX Live 2022/dev/Debian) (preloaded format=platex 2023.9.25)  9 NOV 2023 12:06
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -999,14 +999,34 @@ Style option: `fancybox' v1.4 <2010/05/15> (tvz)
 \bk@bxb=\box142
 \bk@bxa=\box143
 \bk@lcnt=\count380
+) (./multicols.sty
+Style option: `multicol' v1.4m <92/09/04> (FMi)
+English documentation          <92/09/04> (FMi)
+\mult@box=\box144
+\multicol@leftmargin=\dimen326
+\c@unbalance=\count381
+\c@collectmore=\count382
+\c@tracingmulticols=\count383
+\col@number=\count384
+\doublecol@number=\count385
+\multicoltolerance=\count386
+\multicolpretolerance=\count387
+\full@width=\dimen327
+\page@free=\dimen328
+\premulticols=\dimen329
+\postmulticols=\dimen330
+\multicolsep=\skip64
+\multicolbaselineskip=\skip65
+\partial@page=\box145
+\last@line=\box146
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.meta.
 code.tex
 File: pgflibraryarrows.meta.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-\pgfarrowinset=\dimen326
-\pgfarrowlength=\dimen327
-\pgfarrowwidth=\dimen328
-\pgfarrowlinewidth=\dimen329
+\pgfarrowinset=\dimen331
+\pgfarrowlength=\dimen332
+\pgfarrowwidth=\dimen333
+\pgfarrowlinewidth=\dimen334
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
 zlibrarypositioning.code.tex
@@ -1018,45 +1038,45 @@ zlibrarydecorations.pathreplacing.code.tex
 zlibrarydecorations.code.tex
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmoduledecorations.cod
 e.tex
-\pgfdecoratedcompleteddistance=\dimen330
-\pgfdecoratedremainingdistance=\dimen331
-\pgfdecoratedinputsegmentcompleteddistance=\dimen332
-\pgfdecoratedinputsegmentremainingdistance=\dimen333
-\pgf@decorate@distancetomove=\dimen334
-\pgf@decorate@repeatstate=\count381
-\pgfdecorationsegmentamplitude=\dimen335
-\pgfdecorationsegmentlength=\dimen336
+\pgfdecoratedcompleteddistance=\dimen335
+\pgfdecoratedremainingdistance=\dimen336
+\pgfdecoratedinputsegmentcompleteddistance=\dimen337
+\pgfdecoratedinputsegmentremainingdistance=\dimen338
+\pgf@decorate@distancetomove=\dimen339
+\pgf@decorate@repeatstate=\count388
+\pgfdecorationsegmentamplitude=\dimen340
+\pgfdecorationsegmentlength=\dimen341
 )
-\tikz@lib@dec@box=\box144
+\tikz@lib@dec@box=\box147
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/decorations/pgflibrary
 decorations.pathreplacing.code.tex))
 (/usr/share/texlive/texmf-dist/tex/latex/spath3/tikzlibrarycalligraphy.code.tex
 (/usr/share/texlive/texmf-dist/tex/latex/spath3/spath3.sty
 Package: spath3 2021/02/21 v2.4 Functions for manipulating PGF soft paths
-\g__spath_output_int=\count382
-\l__spath_tmpa_dim=\dimen337
-\l__spath_tmpb_dim=\dimen338
-\l__spath_tmpa_int=\count383
-\l__spath_tmpb_int=\count384
-\l__spath_move_x_dim=\dimen339
-\l__spath_move_y_dim=\dimen340
-\g__spath_anon_int=\count385
+\g__spath_output_int=\count389
+\l__spath_tmpa_dim=\dimen342
+\l__spath_tmpb_dim=\dimen343
+\l__spath_tmpa_int=\count390
+\l__spath_tmpb_int=\count391
+\l__spath_move_x_dim=\dimen344
+\l__spath_move_y_dim=\dimen345
+\g__spath_anon_int=\count392
 )
-\l__cal_tmpa_int=\count386
-\l__cal_tmpb_int=\count387
-\g__cal_path_component_int=\count388
-\g__cal_label_int=\count389
-\l__cal_tmpa_dim=\dimen341
-\l__cal_tmpb_dim=\dimen342
-\l__cal_tmpc_dim=\dimen343
-\l__cal_tmpd_dim=\dimen344
-\l__cal_tmpe_dim=\dimen345
-\l__cal_tmpf_dim=\dimen346
-\l__cal_tmpg_dim=\dimen347
-\l__cal_tmph_dim=\dimen348
-\l__cal_taper_width_dim=\dimen349
-\l__cal_line_width_dim=\dimen350
+\l__cal_tmpa_int=\count393
+\l__cal_tmpb_int=\count394
+\g__cal_path_component_int=\count395
+\g__cal_label_int=\count396
+\l__cal_tmpa_dim=\dimen346
+\l__cal_tmpb_dim=\dimen347
+\l__cal_tmpc_dim=\dimen348
+\l__cal_tmpd_dim=\dimen349
+\l__cal_tmpe_dim=\dimen350
+\l__cal_tmpf_dim=\dimen351
+\l__cal_tmpg_dim=\dimen352
+\l__cal_tmph_dim=\dimen353
+\l__cal_taper_width_dim=\dimen354
+\l__cal_line_width_dim=\dimen355
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
 zlibrarypatterns.code.tex
@@ -1075,30 +1095,30 @@ emetropolis.sty
 Package: beamerinnerthememetropolis 2017/01/23 Metropolis inner theme
  (/usr/share/texlive/texmf-dist/tex/latex/tools/calc.sty
 Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
-\calc@Acount=\count390
-\calc@Bcount=\count391
-\calc@Adimen=\dimen351
-\calc@Bdimen=\dimen352
-\calc@Askip=\skip64
-\calc@Bskip=\skip65
+\calc@Acount=\count397
+\calc@Bcount=\count398
+\calc@Adimen=\dimen356
+\calc@Bdimen=\dimen357
+\calc@Askip=\skip66
+\calc@Bskip=\skip67
 LaTeX Info: Redefining \setlength on input line 80.
 LaTeX Info: Redefining \addtolength on input line 81.
-\calc@Ccount=\count392
-\calc@Cskip=\skip66
+\calc@Ccount=\count399
+\calc@Cskip=\skip68
 )
-\metropolis@titleseparator@linewidth=\skip67
-\metropolis@progressonsectionpage=\skip68
-\metropolis@progressonsectionpage@linewidth=\skip69
-\metropolis@blocksep=\skip70
-\metropolis@blockadjust=\skip71
-\metropolis@parskip=\skip72
+\metropolis@titleseparator@linewidth=\skip69
+\metropolis@progressonsectionpage=\skip70
+\metropolis@progressonsectionpage@linewidth=\skip71
+\metropolis@blocksep=\skip72
+\metropolis@blockadjust=\skip73
+\metropolis@parskip=\skip74
 )
 (/usr/share/texlive/texmf-dist/tex/latex/beamertheme-metropolis/beamerouterthem
 emetropolis.sty
 Package: beamerouterthememetropolis 2017/01/23 Metropolis outer theme
-\metropolis@frametitle@padding=\skip73
-\metropolis@progressinheadfoot=\skip74
-\metropolis@progressinheadfoot@linewidth=\skip75
+\metropolis@frametitle@padding=\skip75
+\metropolis@progressinheadfoot=\skip76
+\metropolis@progressinheadfoot@linewidth=\skip77
 )
 (/usr/share/texlive/texmf-dist/tex/latex/beamertheme-metropolis/beamercolorthem
 emetropolis.sty
@@ -1119,42 +1139,42 @@ aTeX to use the Fira fonts on input line 95.
 
 )) (./uline--.sty
 Package: uline-- 2007/07/09 v.2.3.4 ``simple'' underlines
-\@uline@pattern@i=\box145
-\@uline@pattern@ii=\box146
-\@uline@pattern@iii=\box147
-\@uline@pattern@iv=\box148
-\@uline@pattern@v=\box149
-\@uline@pattern@id=\count393
-\@uline@tempskip=\skip76
-\@uline@lastpenalty=\count394
-\@uline@g@tempbox=\box150
-\@uline@charcode=\count395
-\@uline@common@command@argcnt=\count396
+\@uline@pattern@i=\box148
+\@uline@pattern@ii=\box149
+\@uline@pattern@iii=\box150
+\@uline@pattern@iv=\box151
+\@uline@pattern@v=\box152
+\@uline@pattern@id=\count400
+\@uline@tempskip=\skip78
+\@uline@lastpenalty=\count401
+\@uline@g@tempbox=\box153
+\@uline@charcode=\count402
+\@uline@common@command@argcnt=\count403
 ) (./mpc_lecture3.aux)
 \openout1 = `mpc_lecture3.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
-LaTeX Font Info:    Checking defaults for JY1/mc/m/n on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
-LaTeX Font Info:    Checking defaults for JT1/mc/m/n on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 33.
-LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for JY1/mc/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for JT1/mc/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
 
 *geometry* detected driver: dvipdfm
 *geometry* verbose mode - [ preamble ] result:
@@ -1178,7 +1198,7 @@ LaTeX Font Info:    ... okay on input line 33.
 * \footskip=14.22636pt
 * \marginparwidth=4.0pt
 * \marginparsep=10.0pt
-* \columnsep=10.0pt
+* \columnsep=42.67912pt
 * \skip\footins=10.8pt plus 4.0pt minus 2.0pt
 * \hoffset=0.0pt
 * \voffset=0.0pt
@@ -1189,7 +1209,7 @@ LaTeX Font Info:    ... okay on input line 33.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-Package hyperref Info: Link coloring OFF on input line 33.
+Package hyperref Info: Link coloring OFF on input line 37.
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
 
@@ -1199,68 +1219,68 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 (/usr/share/texlive/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count397
+\c@section@level=\count404
 )
-LaTeX Info: Redefining \ref on input line 33.
-LaTeX Info: Redefining \pageref on input line 33.
-LaTeX Info: Redefining \nameref on input line 33.
+LaTeX Info: Redefining \ref on input line 37.
+LaTeX Info: Redefining \pageref on input line 37.
+LaTeX Info: Redefining \nameref on input line 37.
 
 (./mpc_lecture3.out) (./mpc_lecture3.out)
 \@outlinefile=\write7
 \openout7 = `mpc_lecture3.out'.
 
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/cmr/m/n --> OT1/cmss/m/n on input line 33.
+(Font)                  OT1/cmr/m/n --> OT1/cmss/m/n on input line 37.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/cmr/bx/n --> OT1/cmss/b/n on input line 33.
+(Font)                  OT1/cmr/bx/n --> OT1/cmss/b/n on input line 37.
 \symnumbers=\mathgroup6
 \sympureletters=\mathgroup7
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
-(Font)                  OT1/cmss/m/n --> OT1/cmr/m/n on input line 33.
-LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 33.
+(Font)                  OT1/cmss/m/n --> OT1/cmr/m/n on input line 37.
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 37.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/cmr/bx/n --> OT1/cmss/b/n on input line 33.
+(Font)                  OT1/cmr/bx/n --> OT1/cmss/b/n on input line 37.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  OT1/cmr/bx/n --> OT1/cmss/b/n on input line 33.
-LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 33.
+(Font)                  OT1/cmr/bx/n --> OT1/cmss/b/n on input line 37.
+LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 37.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/cmss/m/n --> OT1/cmss/m/n on input line 33.
+(Font)                  OT1/cmss/m/n --> OT1/cmss/m/n on input line 37.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> OT1/cmss/m/n on input line 33.
-LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 33.
+(Font)                  OT1/cmss/bx/n --> OT1/cmss/m/n on input line 37.
+LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 37.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/cmr/m/it --> OT1/cmss/m/it on input line 33.
+(Font)                  OT1/cmr/m/it --> OT1/cmss/m/it on input line 37.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/cmr/bx/it --> OT1/cmss/m/it on input line 33.
-LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 33.
+(Font)                  OT1/cmr/bx/it --> OT1/cmss/m/it on input line 37.
+LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 37.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/cmtt/m/n --> OT1/cmtt/m/n on input line 33.
+(Font)                  OT1/cmtt/m/n --> OT1/cmtt/m/n on input line 37.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> OT1/cmtt/m/n on input line 33.
+(Font)                  OT1/cmtt/m/n --> OT1/cmtt/m/n on input line 37.
 LaTeX Font Info:    Overwriting symbol font `numbers' in version `bold'
-(Font)                  OT1/cmss/m/n --> OT1/cmss/b/n on input line 33.
+(Font)                  OT1/cmss/m/n --> OT1/cmss/b/n on input line 37.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
-(Font)                  OT1/cmss/m/it --> OT1/cmss/b/it on input line 33.
+(Font)                  OT1/cmss/m/it --> OT1/cmss/b/it on input line 37.
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `bold'
-(Font)                  OT1/cmss/b/n --> OT1/cmr/b/n on input line 33.
+(Font)                  OT1/cmss/b/n --> OT1/cmr/b/n on input line 37.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  OT1/cmss/b/n --> OT1/cmss/b/n on input line 33.
+(Font)                  OT1/cmss/b/n --> OT1/cmss/b/n on input line 37.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/m/n --> OT1/cmss/b/n on input line 33.
+(Font)                  OT1/cmss/m/n --> OT1/cmss/b/n on input line 37.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/cmss/m/it --> OT1/cmss/b/it on input line 33.
+(Font)                  OT1/cmss/m/it --> OT1/cmss/b/it on input line 37.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> OT1/cmtt/b/n on input line 33.
-LaTeX Font Info:    Redeclaring symbol font `pureletters' on input line 33.
+(Font)                  OT1/cmtt/m/n --> OT1/cmtt/b/n on input line 37.
+LaTeX Font Info:    Redeclaring symbol font `pureletters' on input line 37.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `normal'
 (Font)                  OT1/cmss/m/it --> OT1/mathkerncmss/m/sl on input line 3
-3.
+7.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
 (Font)                  OT1/cmss/b/it --> OT1/mathkerncmss/m/sl on input line 3
-3.
+7.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
 (Font)                  OT1/mathkerncmss/m/sl --> OT1/mathkerncmss/bx/sl on inp
-ut line 33.
+ut line 37.
 
 (/usr/share/texlive/texmf-dist/tex/latex/translator/translator-basic-dictionary
 -English.dict
@@ -1287,50 +1307,45 @@ ry-English.dict
 Dictionary: translator-theorem-dictionary, Language: English 
 ) (./mpc_lecture3.nav)
 LaTeX Font Info:    Font shape `JT1/gt/bx/n' in size <17.28> not available
-(Font)              Font shape `JT1/gt/m/n' tried instead on input line 35.
+(Font)              Font shape `JT1/gt/m/n' tried instead on input line 39.
 LaTeX Font Info:    Font shape `JY1/gt/bx/n' in size <17.28> not available
-(Font)              Font shape `JY1/gt/m/n' tried instead on input line 35.
+(Font)              Font shape `JY1/gt/m/n' tried instead on input line 39.
 
-Overfull \vbox (45.59155pt too high) detected at line 35
+Overfull \vbox (45.59155pt too high) detected at line 39
  []
 
 [1
 
 ]
-LaTeX Font Info:    Trying to load font information for U+msa on input line 41.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 45.
 
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 41.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 45.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Trying to load font information for OT1+mathkerncmss on inp
-ut line 41.
+ut line 45.
 
 (/usr/share/texlive/texmf-dist/tex/latex/sansmathaccent/ot1mathkerncmss.fd
 File: ot1mathkerncmss.fd 2020/01/31 Fontinst v1.933 font definitions for OT1/ma
 thkerncmss.
 )
 LaTeX Font Info:    Font shape `JT1/gt/bx/n' in size <14.4> not available
-(Font)              Font shape `JT1/gt/m/n' tried instead on input line 41.
+(Font)              Font shape `JT1/gt/m/n' tried instead on input line 45.
 LaTeX Font Info:    Font shape `JY1/gt/bx/n' in size <14.4> not available
-(Font)              Font shape `JY1/gt/m/n' tried instead on input line 41.
+(Font)              Font shape `JY1/gt/m/n' tried instead on input line 45.
 
 [2
 
-]
-LaTeX Font Info:    Trying to load font information for TS1+cmss on input line 
-60.
- (/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmss.fd
-File: ts1cmss.fd 2019/12/16 v2.5j Standard LaTeX font definitions
-) [3
+] [3
 
 ]
-Overfull \vbox (5.42355pt too high) detected at line 102
+Overfull \vbox (5.42355pt too high) detected at line 106
  []
 
 [4
@@ -1339,186 +1354,148 @@ Overfull \vbox (5.42355pt too high) detected at line 102
 
 ] [6
 
+] [7
+
 ]
 
 LaTeX Font Warning: Font shape `OT1/cmss/m/n' in size <6.5> not available
-(Font)              size <6> substituted on input line 201.
+(Font)              size <6> substituted on input line 227.
 
-LaTeX Font Info:    Calculating math sizes for size <6.5> on input line 201.
+LaTeX Font Info:    Calculating math sizes for size <6.5> on input line 227.
 
 LaTeX Font Warning: Font shape `OT1/cmss/m/n' in size <4.54997> not available
-(Font)              size <5> substituted on input line 201.
+(Font)              size <5> substituted on input line 227.
 
 
 LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <6.5> not available
-(Font)              size <6> substituted on input line 201.
+(Font)              size <6> substituted on input line 227.
 
 
 LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <4.54997> not available
-(Font)              size <5> substituted on input line 201.
+(Font)              size <5> substituted on input line 227.
 
 
 LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <3.25> not available
-(Font)              size <5> substituted on input line 201.
+(Font)              size <5> substituted on input line 227.
 
 
 LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <6.5> not available
-(Font)              size <6> substituted on input line 201.
+(Font)              size <6> substituted on input line 227.
 
 
 LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <4.54997> not available
-(Font)              size <5> substituted on input line 201.
+(Font)              size <5> substituted on input line 227.
 
 
 LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <3.25> not available
-(Font)              size <5> substituted on input line 201.
+(Font)              size <5> substituted on input line 227.
 
 
-Overfull \vbox (13.05353pt too high) detected at line 201
+Overfull \vbox (13.05353pt too high) detected at line 227
  []
 
-[7
+[8
 
 ]
 File: Bellman.png Graphic file (type bmp)
 <Bellman.png>
 File: Pontryagin.png Graphic file (type bmp)
 <Pontryagin.png>
- [8
+ [9
 
 ]
 
 LaTeX Font Warning: Font shape `OT1/cmss/m/n' in size <7.5> not available
-(Font)              size <7> substituted on input line 273.
+(Font)              size <7> substituted on input line 299.
 
-LaTeX Font Info:    Calculating math sizes for size <7.5> on input line 273.
+LaTeX Font Info:    Calculating math sizes for size <7.5> on input line 299.
 
 LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <7.5> not available
-(Font)              size <7> substituted on input line 273.
+(Font)              size <7> substituted on input line 299.
 
 
 LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <3.75> not available
-(Font)              size <5> substituted on input line 273.
+(Font)              size <5> substituted on input line 299.
 
 
 LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <7.5> not available
-(Font)              size <7> substituted on input line 273.
+(Font)              size <7> substituted on input line 299.
 
 
 LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <3.75> not available
-(Font)              size <5> substituted on input line 273.
+(Font)              size <5> substituted on input line 299.
 
 
-Overfull \hbox (4.23384pt too wide) detected at line 273
+Overfull \hbox (4.23384pt too wide) detected at line 299
 \OT1/mathkerncmss/m/sl/7.5 V\OT1/cmss/m/n/7 (\OT1/mathkerncmss/m/sl/7.5 x\OML/c
 mm/m/it/7 ; \OT1/mathkerncmss/m/sl/7.5 t\OT1/cmss/m/n/7 ) = [] []
  []
 
-[9
+[10
 
-] [10
-
-]
-Overfull \vbox (27.72346pt too high) detected at line 361
- []
-
-[11
+] [11
 
 ]
-LaTeX Font Info:    Font shape `JT1/gt/bx/n' in size <12> not available
-(Font)              Font shape `JT1/gt/m/n' tried instead on input line 382.
-LaTeX Font Info:    Font shape `JY1/gt/bx/n' in size <12> not available
-(Font)              Font shape `JY1/gt/m/n' tried instead on input line 382.
-
-Overfull \hbox (23.17183pt too wide) detected at line 382
-[]
+Overfull \vbox (27.72346pt too high) detected at line 387
  []
 
 [12
 
 ]
-Overfull \vbox (12.05681pt too high) detected at line 397
+LaTeX Font Info:    Font shape `JT1/gt/bx/n' in size <12> not available
+(Font)              Font shape `JT1/gt/m/n' tried instead on input line 408.
+LaTeX Font Info:    Font shape `JY1/gt/bx/n' in size <12> not available
+(Font)              Font shape `JY1/gt/m/n' tried instead on input line 408.
+
+Overfull \hbox (23.17183pt too wide) detected at line 408
+[]
  []
 
 [13
 
 ]
-Overfull \hbox (23.27997pt too wide) detected at line 412
-[]
+Overfull \vbox (12.05681pt too high) detected at line 423
  []
 
 [14
 
 ]
-Overfull \hbox (1.65948pt too wide) in paragraph at lines 444--444
- [] 
- []
-
-[15
+LaTeX Font Info:    Trying to load font information for TS1+cmss on input line 
+441.
+ (/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmss.fd
+File: ts1cmss.fd 2019/12/16 v2.5j Standard LaTeX font definitions
+) [15
 
 ]
-LaTeX Font Info:    Calculating math sizes for size <8.8> on input line 469.
-
-
-LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <4.4> not available
-(Font)              size <5> substituted on input line 469.
-
-
-LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <4.4> not available
-(Font)              size <5> substituted on input line 469.
-
-
-Overfull \hbox (31.81729pt too wide) in paragraph at lines 469--469
-[][]  
- []
-
-
-Overfull \vbox (21.7984pt too high) detected at line 469
+Overfull \hbox (1.65948pt too wide) in paragraph at lines 473--473
+ [] 
  []
 
 [16
 
 ]
-
-LaTeX Font Warning: Font shape `OT1/cmss/m/n' in size <8.5> not available
-(Font)              size <8> substituted on input line 492.
-
-LaTeX Font Info:    Calculating math sizes for size <8.5> on input line 492.
-
-LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <8.5> not available
-(Font)              size <8> substituted on input line 492.
+LaTeX Font Info:    Calculating math sizes for size <8.8> on input line 498.
 
 
-LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <4.25> not available
-(Font)              size <5> substituted on input line 492.
+LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <4.4> not available
+(Font)              size <5> substituted on input line 498.
 
 
-LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <8.5> not available
-(Font)              size <8> substituted on input line 492.
+LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <4.4> not available
+(Font)              size <5> substituted on input line 498.
 
 
-LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <4.25> not available
-(Font)              size <5> substituted on input line 492.
-
-
-Overfull \hbox (24.53761pt too wide) in paragraph at lines 492--492
+Overfull \hbox (31.81729pt too wide) in paragraph at lines 498--498
 [][]  
  []
 
 
-Overfull \vbox (10.72285pt too high) detected at line 492
+Overfull \vbox (21.7984pt too high) detected at line 498
  []
 
 [17
 
-]
-File: Pontryagin.png Graphic file (type bmp)
-<Pontryagin.png>
-
-Overfull \vbox (6.91563pt too high) detected at line 512
- []
-
-[18
+] [18
 
 ] [19
 
@@ -1551,12 +1528,12 @@ Package rerunfilecheck Info: File `mpc_lecture3.out' has not changed.
 (rerunfilecheck)             Checksum: 05B9FF7757FE6A446D8F294B02146D28;54.
  ) 
 Here is how much of TeX's memory you used:
- 41413 strings out of 478741
- 946273 string characters out of 5860982
- 1223118 words of memory out of 5000000
- 59142 multiletter control sequences out of 15000+600000
- 539181 words of font info for 171 fonts, out of 8000000 for 9000
+ 41684 strings out of 478741
+ 951926 string characters out of 5860982
+ 1225973 words of memory out of 5000000
+ 59410 multiletter control sequences out of 15000+600000
+ 535601 words of font info for 157 fonts, out of 8000000 for 9000
  929 hyphenation exceptions out of 8191
  128i,17n,122p,1811b,1481s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on mpc_lecture3.dvi (24 pages, 144472 bytes).
+Output written on mpc_lecture3.dvi (24 pages, 142856 bytes).

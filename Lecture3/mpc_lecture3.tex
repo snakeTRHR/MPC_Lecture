@@ -105,7 +105,7 @@
     
     \end{frame}
 
-    \begin{frame}{変分法}
+    \begin{frame}{変分法1}
         \footnotesize
 
         \begin{tikzpicture}        
@@ -124,9 +124,29 @@
             \draw[dashed, red, very thick, domain=-0.5:3.5]plot(\x+6,{0.3*cos(3 * \x r)+0.4*sin(6*\x r)+0.3*sin(8*\x r)+1.7});
             \draw[black, very thick, domain=-0.5:3.5]plot(\x+6,{0.2*cos(3 * \x r)+0.1*sin(6*\x r)+1.7});
 
+            \fill[white](0, 4)node[black]{微分法}circle(0.1);
+            \fill[white](6, 4)node[black]{変分法}circle(0.1);
+
+            \fill[white](0.6, -1)node[black, right]{関数の勾配}circle(0.1);
+            \fill[white](5.5, -1)node[black, right]{汎関数(関数の関数)の勾配}circle(0.1);
+
         \end{tikzpicture}
     \end{frame}
 
+    \begin{frame}{変分法2}
+        \begin{screen}
+            \begin{center}
+                評価関数 \quad $J =\varphi(x(t_f))+\int_{t_0}^{t_f} L(x(t), u(t), t) \, dt$
+            \end{center}
+        \end{screen}
+        \colorbox{yellow}{評価関数$J$は関数$x(t)$,$u(t)$の関数なので汎関数}\\
+        二点境界値問題の解を用いることによって\\
+        初期値条件:$x(t_0)=x_0$ \\
+        終端条件:$\lambda(t_f)=\left(\frac{\partial \varphi}{\partial x}\right)^\top$ \\
+        随伴方程式:$\frac{d\lambda}{dt}=-\left(\frac{\partial H}{\partial x}\right)^\top$\\
+        状態方程式:$\frac{dx}{dt}=f(x,u,t)=\left(\frac{\partial H}{\partial \lambda}\right)^\top$ \\
+        最適制御入力条件:$\frac{\partial H}{\partial u}=0$ \\
+    \end{frame}
     \begin{frame}{変分法}
         \scriptsize
 

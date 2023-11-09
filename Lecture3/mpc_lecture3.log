@@ -1,4 +1,4 @@
-This is e-pTeX, Version 3.141592653-p3.9.1-210218-2.6 (utf8.euc) (TeX Live 2022/dev/Debian) (preloaded format=platex 2023.9.25)  9 NOV 2023 12:06
+This is e-pTeX, Version 3.141592653-p3.9.1-210218-2.6 (utf8.euc) (TeX Live 2022/dev/Debian) (preloaded format=platex 2023.9.25)  9 NOV 2023 12:46
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1356,146 +1356,146 @@ Overfull \vbox (5.42355pt too high) detected at line 106
 
 ] [7
 
+] [8
+
 ]
 
 LaTeX Font Warning: Font shape `OT1/cmss/m/n' in size <6.5> not available
-(Font)              size <6> substituted on input line 227.
+(Font)              size <6> substituted on input line 247.
 
-LaTeX Font Info:    Calculating math sizes for size <6.5> on input line 227.
+LaTeX Font Info:    Calculating math sizes for size <6.5> on input line 247.
 
 LaTeX Font Warning: Font shape `OT1/cmss/m/n' in size <4.54997> not available
-(Font)              size <5> substituted on input line 227.
+(Font)              size <5> substituted on input line 247.
 
 
 LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <6.5> not available
-(Font)              size <6> substituted on input line 227.
+(Font)              size <6> substituted on input line 247.
 
 
 LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <4.54997> not available
-(Font)              size <5> substituted on input line 227.
+(Font)              size <5> substituted on input line 247.
 
 
 LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <3.25> not available
-(Font)              size <5> substituted on input line 227.
+(Font)              size <5> substituted on input line 247.
 
 
 LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <6.5> not available
-(Font)              size <6> substituted on input line 227.
+(Font)              size <6> substituted on input line 247.
 
 
 LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <4.54997> not available
-(Font)              size <5> substituted on input line 227.
+(Font)              size <5> substituted on input line 247.
 
 
 LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <3.25> not available
-(Font)              size <5> substituted on input line 227.
+(Font)              size <5> substituted on input line 247.
 
 
-Overfull \vbox (13.05353pt too high) detected at line 227
+Overfull \vbox (13.05353pt too high) detected at line 247
  []
 
-[8
+[9
 
 ]
 File: Bellman.png Graphic file (type bmp)
 <Bellman.png>
 File: Pontryagin.png Graphic file (type bmp)
 <Pontryagin.png>
- [9
+ [10
 
 ]
 
 LaTeX Font Warning: Font shape `OT1/cmss/m/n' in size <7.5> not available
-(Font)              size <7> substituted on input line 299.
+(Font)              size <7> substituted on input line 319.
 
-LaTeX Font Info:    Calculating math sizes for size <7.5> on input line 299.
+LaTeX Font Info:    Calculating math sizes for size <7.5> on input line 319.
 
 LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <7.5> not available
-(Font)              size <7> substituted on input line 299.
+(Font)              size <7> substituted on input line 319.
 
 
 LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <3.75> not available
-(Font)              size <5> substituted on input line 299.
+(Font)              size <5> substituted on input line 319.
 
 
 LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <7.5> not available
-(Font)              size <7> substituted on input line 299.
+(Font)              size <7> substituted on input line 319.
 
 
 LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <3.75> not available
-(Font)              size <5> substituted on input line 299.
+(Font)              size <5> substituted on input line 319.
 
 
-Overfull \hbox (4.23384pt too wide) detected at line 299
+Overfull \hbox (4.23384pt too wide) detected at line 319
 \OT1/mathkerncmss/m/sl/7.5 V\OT1/cmss/m/n/7 (\OT1/mathkerncmss/m/sl/7.5 x\OML/c
 mm/m/it/7 ; \OT1/mathkerncmss/m/sl/7.5 t\OT1/cmss/m/n/7 ) = [] []
  []
 
-[10
+[11
 
-] [11
-
-]
-Overfull \vbox (27.72346pt too high) detected at line 387
- []
-
-[12
+] [12
 
 ]
-LaTeX Font Info:    Font shape `JT1/gt/bx/n' in size <12> not available
-(Font)              Font shape `JT1/gt/m/n' tried instead on input line 408.
-LaTeX Font Info:    Font shape `JY1/gt/bx/n' in size <12> not available
-(Font)              Font shape `JY1/gt/m/n' tried instead on input line 408.
-
-Overfull \hbox (23.17183pt too wide) detected at line 408
-[]
+Overfull \vbox (27.72346pt too high) detected at line 407
  []
 
 [13
 
 ]
-Overfull \vbox (12.05681pt too high) detected at line 423
+LaTeX Font Info:    Font shape `JT1/gt/bx/n' in size <12> not available
+(Font)              Font shape `JT1/gt/m/n' tried instead on input line 428.
+LaTeX Font Info:    Font shape `JY1/gt/bx/n' in size <12> not available
+(Font)              Font shape `JY1/gt/m/n' tried instead on input line 428.
+
+Overfull \hbox (23.17183pt too wide) detected at line 428
+[]
  []
 
 [14
 
 ]
+Overfull \vbox (12.05681pt too high) detected at line 443
+ []
+
+[15
+
+]
 LaTeX Font Info:    Trying to load font information for TS1+cmss on input line 
-441.
+461.
  (/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmss.fd
 File: ts1cmss.fd 2019/12/16 v2.5j Standard LaTeX font definitions
-) [15
+) [16
 
 ]
-Overfull \hbox (1.65948pt too wide) in paragraph at lines 473--473
+Overfull \hbox (1.65948pt too wide) in paragraph at lines 493--493
  [] 
- []
-
-[16
-
-]
-LaTeX Font Info:    Calculating math sizes for size <8.8> on input line 498.
-
-
-LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <4.4> not available
-(Font)              size <5> substituted on input line 498.
-
-
-LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <4.4> not available
-(Font)              size <5> substituted on input line 498.
-
-
-Overfull \hbox (31.81729pt too wide) in paragraph at lines 498--498
-[][]  
- []
-
-
-Overfull \vbox (21.7984pt too high) detected at line 498
  []
 
 [17
 
-] [18
+]
+LaTeX Font Info:    Calculating math sizes for size <8.8> on input line 518.
+
+
+LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <4.4> not available
+(Font)              size <5> substituted on input line 518.
+
+
+LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <4.4> not available
+(Font)              size <5> substituted on input line 518.
+
+
+Overfull \hbox (31.81729pt too wide) in paragraph at lines 518--518
+[][]  
+ []
+
+
+Overfull \vbox (21.7984pt too high) detected at line 518
+ []
+
+[18
 
 ] [19
 
@@ -1508,6 +1508,8 @@ Overfull \vbox (21.7984pt too high) detected at line 498
 ] [23
 
 ] [24
+
+] [25
 
 ]
 \tf@nav=\write8
@@ -1528,12 +1530,12 @@ Package rerunfilecheck Info: File `mpc_lecture3.out' has not changed.
 (rerunfilecheck)             Checksum: 05B9FF7757FE6A446D8F294B02146D28;54.
  ) 
 Here is how much of TeX's memory you used:
- 41684 strings out of 478741
- 951926 string characters out of 5860982
- 1225973 words of memory out of 5000000
- 59410 multiletter control sequences out of 15000+600000
+ 41710 strings out of 478741
+ 952374 string characters out of 5860982
+ 1226537 words of memory out of 5000000
+ 59436 multiletter control sequences out of 15000+600000
  535601 words of font info for 157 fonts, out of 8000000 for 9000
  929 hyphenation exceptions out of 8191
  128i,17n,122p,1811b,1481s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on mpc_lecture3.dvi (24 pages, 142856 bytes).
+Output written on mpc_lecture3.dvi (25 pages, 150260 bytes).

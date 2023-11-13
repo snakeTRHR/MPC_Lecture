@@ -549,8 +549,8 @@
         \begin{enumerate}
             \item 評価区間を十分小さい時間刻み$\Delta t$で分割し,$t=t_f$, $V(x, t_f)=\varphi (x)$とおく
             \item \textcolor{red}{各状態$x$に対して$H\left(x, u, \left( \frac{\partial V}{\partial x} \right)^T\left(x, t\right), t \right) = L(x, u, t) + \frac{\partial V}{\partial x}\left(x, t\right)f\left(x, u, t\right)$を最小にする制御入力$u^*(x, t)$を求める}
-            \item \textcolor{blue}{次式で関数$V(x, t-\Delta t)$を求める$V(x, t-\Delta t)=V(x, t)+H\left(x, u^*, \left( \frac{\partial V}{\partial x} \right)^T\left(x, t\right), t \right)\Delta t$}
-            \item \textcolor{teal}{$t=t-\Delta t$とする}
+            \item \textcolor{teal}{次式で関数$V(x, t-\Delta t)$を求める$V(x, t-\Delta t)=V(x, t)+H\left(x, u^*, \left( \frac{\partial V}{\partial x} \right)^T\left(x, t\right), t \right)\Delta t$}
+            \item \textcolor{blue}{$t=t-\Delta t$とする}
             \item $t=t_0$であれば停止。そうでなければ2へ
         \end{enumerate}
     \end{frame}

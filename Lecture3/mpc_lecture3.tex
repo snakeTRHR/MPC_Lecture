@@ -444,7 +444,7 @@
 
         \begin{block}{Bellman方程式}
             \begin{align*}
-                &V(x, t) = \min_{u[t, t+dt]} \left( L(x, u, t) dt + V \left( x + f(x, u, t) dt, t + dt \right) \right) \\
+                &V(x, t) = \min_{u[t]} \left( L(x, u, t) dt + V \left( x + f(x, u, t) dt, t + dt \right) \right) \\
                 &V(x, t_f) = \varphi(x(t_f))
             \end{align*}
         \end{block}
@@ -452,10 +452,11 @@
         \fontsize{7.5pt}{6.5pt}\selectfont
 
         \begin{align*}
-            V(x, t) &= \min_{u[t, t_f]} \left( \varphi(x(t_f)) + {\color{red}\int_t^{t_f} L(x(\tau), u(\tau), \tau) d\tau} \right) \\
-            &= {\color{blue}\min_{u[t, t_f]}} \left( {\color{red}\int_t^{t+dt} L(x(\tau), u(\tau), \tau) d\tau} + \colorbox{yellow}{$\varphi(x(t_f)) + {\color{red}\int_{t+dt}^{t_f} L(x(\tau), u(\tau), \tau) d\tau}$} \right) \\
+            V(x, t) &= \hspace{0.4em}\min_{u[t, t_f]} \left( \varphi(x(t_f)) + {\color{red}\int_t^{t_f} L(x(\tau), u(\tau), \tau) d\tau} \right) \\
+            &= \hspace{0.4em}{\color{blue}\min_{u[t, t_f]}} \left( {\color{red}\int_t^{t+dt} L(x(\tau), u(\tau), \tau) d\tau} + \colorbox{yellow}{$\varphi(x(t_f)) + {\color{red}\int_{t+dt}^{t_f} L(x(\tau), u(\tau), \tau) d\tau}$} \right) \\
             &= {\color{blue}\min_{u[t, t+dt]}} \left( \int_t^{t+dt} L(x(\tau), u(\tau), \tau) d\tau + \colorbox{yellow}{${\color{blue}\min_{u[t+dt, t_f]}} \left( \varphi(x(t_f)) + \int_{t+dt}^{t_f} L(x(\tau), u(\tau), \tau) d\tau \right) $} \right) \\
-            &= \min_{u[t, t+dt]} \left( \int_t^{t+dt} L(x(\tau), u(\tau), \tau) d\tau + \colorbox{yellow}{$V \left( x + \int_t^{t+dt} f(x, u, \tau) d\tau, t + dt \right)$} \right) \\
+            &= \min_{u[t, t+dt]} \left( \int_t^{t+dt} L(x(\tau), u(\tau), \tau) d\tau + \colorbox{yellow}{$V \left( x + f(x, u, t) dt, t + dt \right)$} \right) \\
+            &= \hspace{0.8em} \min_{u(t)} \quad \left( L(x, u, t) dt + V \left( x + f(x, u, t) dt, t + dt \right) \right)
         \end{align*}
 
     \end{frame}
@@ -465,7 +466,7 @@
 
         \begin{block}{Bellman方程式}
             \begin{align*}
-                V(x, t) &= \min_{u[t, t+dt]} \left( L(x, u, t) dt + V \left( x + f(x, u, t) dt, t + dt \right) \right)
+                V(x, t) = \min_{u(t)} \left( L(x, u, t) dt + V \left( x + f(x, u, t) dt, t + dt \right) \right)
             \end{align*}
         \end{block}
 
@@ -572,7 +573,7 @@
     \end{frame}
 
     \begin{frame}{最小原理1}
-        \footnotesize
+        \fontsize{8.5pt}{8.5pt}\selectfont
 
         \begin{tcolorbox}[title=最適制御]
             状態方程式 \quad $\dot{x}(t) = f(x(t), u(t), t)$ \\
@@ -607,11 +608,11 @@
 
             \begin{align*}
                 \begin{cases}
-                    &x(t_0)=x_0 \\
-                    &\lambda(t_f)=\left(\frac{\partial \varphi}{\partial x}\right)^\top \\
-                    &\frac{d\lambda}{dt}=-\left(\frac{\partial H}{\partial x}\right)^\top\\
-                    &\frac{dx}{dt}=f(x,u,t)=\left(\frac{\partial H}{\partial \lambda}\right)^\top \\
-                    &H=min _{u \in \Omega}H\\
+                    &x^*(t_0)=x_0 \\
+                    &\lambda(t_f)=\left(\frac{\partial \varphi}{\partial x}\right)^\top(x^*, u^*, \lambda, t) \\
+                    &\frac{d\lambda}{dt}=-\left(\frac{\partial H}{\partial x}\right)^\top(x^*, u^*, \lambda, t)\\
+                    &\frac{dx}{dt}=f(x^*,u^*,t)=\left(\frac{\partial H}{\partial \lambda}\right)^\top(x^*, u^*, \lambda, t) \\
+                    &H(x^*, u^*, \lambda, t)=min _{u \in \Omega}H(x^*, u, \lambda, t)\\
                 \end{cases}
             \end{align*}
             ここで$\Omega$は実行可能な入力$u$の集合
@@ -626,11 +627,11 @@
         \begin{block}{Pontryaginの最小原理}
             \begin{align*}
                 \begin{cases}
-                    &x(t_0)=x_0 \\
-                    &\lambda(t_f)=\left(\frac{\partial \varphi}{\partial x}\right)^\top \\
-                    &\frac{d\lambda}{dt}=-\left(\frac{\partial H}{\partial x}\right)^\top\\
-                    &\frac{dx}{dt}=f(x,u,t)=\left(\frac{\partial H}{\partial \lambda}\right)^\top \\
-                    &H=min _{u \in \Omega}H\\
+                    &x^*(t_0)=x_0 \\
+                    &\lambda(t_f)=\left(\frac{\partial \varphi}{\partial x}\right)^\top(x^*, u^*, \lambda, t) \\
+                    &\frac{d\lambda}{dt}=-\left(\frac{\partial H}{\partial x}\right)^\top(x^*, u^*, \lambda, t)\\
+                    &\frac{dx}{dt}=f(x^*,u^*,t)=\left(\frac{\partial H}{\partial \lambda}\right)^\top(x^*, u^*, \lambda, t) \\
+                    &H(x^*, u^*, \lambda, t)=min _{u \in \Omega}H(x^*, u, \lambda, t)\\
                 \end{cases}
             \end{align*}
         \end{block}
@@ -676,11 +677,11 @@
             \begin{column}{0.45\textwidth}
                 \begin{align*}
                     \begin{cases}
-                        &x(t_0)=x_0 \\
-                        &\lambda(t_f)=\left(\frac{\partial \varphi}{\partial x}\right)^\top \\
-                        &\frac{d\lambda}{dt}=-\left(\frac{\partial H}{\partial x}\right)^\top\\
-                        &\frac{dx}{dt}=f(x,u,t)=\left(\frac{\partial H}{\partial \lambda}\right)^\top \\
-                        &H=min _{u \in \Omega}H\\
+                        &x^*(t_0)=x_0 \\
+                        &\lambda(t_f)=\left(\frac{\partial \varphi}{\partial x}\right)^\top(x^*, u^*, \lambda, t) \\
+                        &\frac{d\lambda}{dt}=-\left(\frac{\partial H}{\partial x}\right)^\top(x^*, u^*, \lambda, t)\\
+                        &\frac{dx}{dt}=f(x^*,u^*,t)=\left(\frac{\partial H}{\partial \lambda}\right)^\top(x^*, u^*, \lambda, t) \\
+                        &H(x^*, u^*, \lambda, t)=min _{u \in \Omega}H(x^*, u, \lambda, t)\\
                     \end{cases}
                 \end{align*}
             \end{column}
